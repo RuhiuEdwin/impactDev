@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Use Montserrat as the default font */
+  --font-sans: "Montserrat", sans-serif;
+  --foreground-color: #252C59;
+  --background-start-color: #d6dbdc;
+  --background-end-color: #ffffff;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-color: #ffffff;
+    --background-start-color: #000000;
+    --background-end-color: #000000;
+  }
+} */
+
+body {
+  color: var(--foreground-color);
+  background: linear-gradient(to bottom, transparent, var(--background-end-color)) var(--background-start-color);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
