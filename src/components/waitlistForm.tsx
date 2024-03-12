@@ -10,7 +10,7 @@ type onNextStep = () => void;
 const waitlistForm = ({ onNextStep }: { onNextStep: onNextStep }) => {
   return (
     <div>
-      <p className="text-sm font-light text-center mt-2">
+      <p className="text-sm lg:text-base  font-light text-center mt-2">
         ImpacTower provides a Toolbox of{" "}
         <span className="text-navy font-bold">
           Impact resources & Toolkits 
@@ -34,19 +34,23 @@ const waitlistForm = ({ onNextStep }: { onNextStep: onNextStep }) => {
           <div className="flex flex-col items-start">
             <div className="flex gap-1 items-center">
               <input type="radio" id="" name="" value="" />
-              <label className="text-xs font-extralight">GUIDES</label>
+              <label className="text-xs lg:text-sm font-thin">GUIDES</label>
             </div>
             <div className="flex gap-1 items-center">
               <input type="radio" id="" name="" value="" />
-              <label className="text-xs font-extralight">TOOLKITS</label>
+              <label className="text-xs lg:text-sm font-thin">TOOLKITS</label>
             </div>
             <div className="flex gap-1 items-center">
               <input type="radio" id="" name="" value="" />
-              <label className="text-xs font-extralight">CERTIFICATION</label>
+              <label className="text-xs lg:text-sm font-thin">
+                CERTIFICATION
+              </label>
             </div>
             <div className="flex gap-1 items-center">
               <input type="radio" id="" name="" value="" />
-              <label className="text-xs font-extralight">ALL THE ABOVE</label>
+              <label className="text-xs lg:text-sm font-thin">
+                ALL THE ABOVE
+              </label>
             </div>
           </div>
         </div>

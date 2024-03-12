@@ -6,7 +6,7 @@ type OpenWaitlistForm = () => void;
 
 const callToAction1Component = ({ openWaitlistForm }: { openWaitlistForm: OpenWaitlistForm }) => {
   return (
-    <div className="relative h-[300px] lg:h-[400px]">
+    <div className="relative h-[300px] w-screen">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

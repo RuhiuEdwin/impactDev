@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const callToAction2Component = () => {
   return (
-    <div className="relative h-[200px] lg:h-[400px]">
+    <div className="relative h-[200px] w-screen">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

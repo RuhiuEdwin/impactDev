@@ -7,9 +7,9 @@ const five = ({
   return (
     <div
       onClick={closeWaitlistForm}
-      className="flex flex-col gap-1 font-light items-center"
+      className="flex flex-col gap-5 text-sm lg:gap-5 font-light items-center text-center"
     >
-      <div className="text-navy">
+      <div className="text-navy font-bold">
         👍 👍 👍 Congratulations, you've successfully joined the waitlist.
       </div>
       <div>
