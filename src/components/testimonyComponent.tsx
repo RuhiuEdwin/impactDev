@@ -36,7 +36,7 @@ const testimonyComponent = () => {
               ? "flex-col items-end"
               : "flex-col items-start";
             const reverse = isEven ? "flex-row-reverse" : "flex";
-            const border = isEven ? "border-l border-l-darkGreen" : "";
+            const border = isEven ? "lg:border-l lg:border-l-darkGreen" : "";
 
             return (
               <div
