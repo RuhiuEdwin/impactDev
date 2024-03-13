@@ -158,7 +158,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
           className={`p-2 w-full rounded-sm text-center font-bold ${
             isFormFilled ? "bg-navy text-darkGreeen" : "bg-snow text-navy"
           }`}
-          // disabled={!isFormFilled}
+          disabled={!isFormFilled}
         >
           FREE TOOLBOX ACCESS
         </button>

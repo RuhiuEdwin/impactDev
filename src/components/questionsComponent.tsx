@@ -15,6 +15,10 @@ type FormData = {
   emailAddress: string;
   companyName: string;
   helpType: string[];
+
+  companySize: string;
+  countryOfOperations: string;
+  sustainabilityInitiatives: string;
 };
 
 const questionsComponent = ({
@@ -28,6 +32,9 @@ const questionsComponent = ({
     emailAddress: "",
     companyName: "",
     helpType: [],
+    companySize: "",
+    countryOfOperations: "",
+    sustainabilityInitiatives: "",
   });
 
   const handleNextStep = () => {
@@ -67,6 +74,8 @@ const questionsComponent = ({
         {currentStep === 2 && (
           <One
             onNextStep={handleNextStep}
+            formData={formData}
+            updateFormData={updateFormData}
             onPreviousStep={handlePreviousStep}
           />
         )}
