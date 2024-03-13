@@ -58,6 +58,12 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
     setIsFormFilled(checkFormFilled());
   }, [formData]);
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      console.log(formData);
+      onNextStep();
+    };
+    
   return (
     <div>
       <p className="text-sm lg:text-base  font-light text-center mt-2">
@@ -66,7 +72,10 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
           Impact resources & Toolkits 
         </span>
       </p>
-      <form className="flex flex-col gap-3 mt-5 items-start w-full ">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-3 mt-5 items-start w-full "
+      >
         <div className="flex flex-col gap-1 items-start w-full">
           <h4 className="font-light text-sm">FULL NAMES</h4>
           <input
@@ -154,7 +163,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
           </div>
         </div>
         <button
-          onClick={onNextStep}
+          type="submit"
           className={`p-2 w-full rounded-sm text-center font-bold mt-10 ${
             isFormFilled
               ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"

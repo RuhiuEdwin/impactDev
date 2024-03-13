@@ -30,6 +30,9 @@ type FormData = {
   goals: string[];
   otherGoal: string;
   sustainabilityTeam: string[];
+  budget: string;
+  preferredFormat: string;
+  specificFeatures: string;
 };
 
 const questionsComponent = ({
@@ -48,16 +51,19 @@ const [formData, setFormData] = useState<FormData>({
   sustainabilityInitiatives: "",
   sustainabilityInitiativesEngaged: "",
   sustainabilityPriorities: {
-    environmentalConservation: 0, 
-    socialResponsibility: 0,
-    fairTrade: 0,
-    climateAction: 0,
-    genderEquality: 0,
+    environmentalConservation: 1, 
+    socialResponsibility: 1,
+    fairTrade: 1,
+    climateAction: 1,
+    genderEquality: 1,
   },
   sustainabilityStandards: "",
   goals: [],
   otherGoal: "",
   sustainabilityTeam: [],
+  budget: "",
+  preferredFormat: "",
+  specificFeatures: "",
 });
 
 
@@ -122,6 +128,8 @@ const [formData, setFormData] = useState<FormData>({
         {currentStep === 5 && (
           <Four
             onNextStep={handleNextStep}
+            formData={formData}
+            updateFormData={updateFormData}
             onPreviousStep={handlePreviousStep}
           />
         )}

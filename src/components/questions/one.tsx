@@ -50,7 +50,7 @@ const Two: React.FC<TwoProps> = ({
         <div className="flex flex-col gap-1 items-start">
           <h4 className="text-sm">What's your Company Size?</h4>
           <div className="flex flex-col items-start">
-            <div className="flex gap-1 items-center">
+            <div className="flex gap-1 items-start">
               <input
                 type="radio"
                 id="micro"
@@ -66,7 +66,7 @@ const Two: React.FC<TwoProps> = ({
                 Micro-sized business: less than 10 employees
               </label>
             </div>
-            <div className="flex gap-1 items-center">
+            <div className="flex gap-1 items-start">
               <input
                 type="radio"
                 id="micro"
@@ -81,7 +81,7 @@ const Two: React.FC<TwoProps> = ({
                 Medium business: 50 - 249 employees
               </label>
             </div>
-            <div className="flex gap-1 items-center">
+            <div className="flex gap-1 items-start">
               <input
                 type="radio"
                 id="micro"

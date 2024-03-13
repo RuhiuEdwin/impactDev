@@ -24,6 +24,12 @@ const five = ({
          In the meantime, please stay tuned and keep an eye on your inbox for
         exclusive content and announcements.
       </div>
+          <button
+            onClick={closeWaitlistForm}
+            className={`text-snow p-2  rounded-sm text-center font-bold w-full bg-navy mt-10`}
+          >
+            Close
+          </button>
     </div>
   );
 };
