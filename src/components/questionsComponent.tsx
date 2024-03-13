@@ -27,6 +27,9 @@ type FormData = {
     genderEquality: number;
   };
   sustainabilityStandards: string;
+  goals: string[];
+  otherGoal: string;
+  sustainabilityTeam: string[];
 };
 
 const questionsComponent = ({
@@ -52,6 +55,9 @@ const [formData, setFormData] = useState<FormData>({
     genderEquality: 0,
   },
   sustainabilityStandards: "",
+  goals: [],
+  otherGoal: "",
+  sustainabilityTeam: [],
 });
 
 
@@ -108,6 +114,8 @@ const [formData, setFormData] = useState<FormData>({
         {currentStep === 4 && (
           <Three
             onNextStep={handleNextStep}
+            formData={formData}
+            updateFormData={updateFormData}
             onPreviousStep={handlePreviousStep}
           />
         )}

@@ -167,14 +167,16 @@ const Three: React.FC<ThreeProps> = ({
         <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full mt-10">
           <button
             onClick={onPreviousStep}
-            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow"
+            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow  hover:text-navy"
           >
             BACK
           </button>
           <button
             onClick={onNextStep}
             className={`p-2 w-full rounded-sm text-center font-bold ${
-              isFormFilled ? "bg-navy text-darkGreeen" : "bg-snow text-navy"
+              isFormFilled
+                ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
+                : "bg-snow text-navy"
             }`}
             disabled={!isFormFilled}
           >
