@@ -19,6 +19,14 @@ type FormData = {
   countryOfOperations: string;
   sustainabilityInitiatives: string;
   sustainabilityInitiativesEngaged: string;
+  sustainabilityPriorities: {
+    environmentalConservation: number;
+    socialResponsibility: number;
+    fairTrade: number;
+    climateAction: number;
+    genderEquality: number;
+  };
+  sustainabilityStandards: string;
 };
 
 const questionsComponent = ({
@@ -27,16 +35,25 @@ const questionsComponent = ({
   closeWaitlistForm: closeWaitlistForm;
 }) => {
   const [currentStep, setCurrentStep] = useState(1); // Initial step
-  const [formData, setFormData] = useState<FormData>({
-    fullName: "",
-    emailAddress: "",
-    companyName: "",
-    helpType: [],
-    companySize: "",
-    countryOfOperations: "",
-    sustainabilityInitiatives: "",
-    sustainabilityInitiativesEngaged : ""
-  });
+const [formData, setFormData] = useState<FormData>({
+  fullName: "",
+  emailAddress: "",
+  companyName: "",
+  helpType: [],
+  companySize: "",
+  countryOfOperations: "",
+  sustainabilityInitiatives: "",
+  sustainabilityInitiativesEngaged: "",
+  sustainabilityPriorities: {
+    environmentalConservation: 0, 
+    socialResponsibility: 0,
+    fairTrade: 0,
+    climateAction: 0,
+    genderEquality: 0,
+  },
+  sustainabilityStandards: "",
+});
+
 
   const handleNextStep = () => {
     console.log(formData);
@@ -83,6 +100,8 @@ const questionsComponent = ({
         {currentStep === 3 && (
           <Two
             onNextStep={handleNextStep}
+            formData={formData}
+            updateFormData={updateFormData}
             onPreviousStep={handlePreviousStep}
           />
         )}

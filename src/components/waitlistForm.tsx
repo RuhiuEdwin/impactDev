@@ -155,7 +155,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
         </div>
         <button
           onClick={onNextStep}
-          className={`p-2 w-full rounded-sm text-center font-bold ${
+          className={`p-2 w-full rounded-sm text-center font-bold mt-10 ${
             isFormFilled ? "bg-navy text-darkGreeen" : "bg-snow text-navy"
           }`}
           disabled={!isFormFilled}

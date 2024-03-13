@@ -141,29 +141,29 @@ const Two: React.FC<TwoProps> = ({
               <label className="text-xs lg:text-sm font-thin">No</label>
             </div>
           </div>
-          {formData.sustainabilityInitiatives ===  "Yes" && (
-          <div className="flex flex-col gap-1 items-start w-full">
-            <h4 className=" text-sm">
-              If yes, please briefly describe your current sustainability
-              initiatives.
-            </h4>
-            <textarea
-              rows={4}
-              name="sustainabilityInitiatives"
-              value={formData.sustainabilityInitiativesEngaged}
-              onChange={handleChange}
-              className="w-full bg-white rounded-sm pl-2 text-navy"
-            ></textarea>
-          </div>
+          {formData.sustainabilityInitiatives === "Yes" && (
+            <div className="flex flex-col gap-1 items-start w-full">
+              <h4 className=" text-sm">
+                If yes, please briefly describe your current sustainability
+                initiatives.
+              </h4>
+              <textarea
+                rows={4}
+                name="sustainabilityInitiatives"
+                value={formData.sustainabilityInitiativesEngaged}
+                onChange={handleChange}
+                className="w-full bg-white rounded-sm pl-2 text-navy"
+              ></textarea>
+            </div>
           )}
         </div>
-        <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full">
+        <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full mt-10">
           <button
             onClick={onPreviousStep}
-            className="text-snow bg-navy p-2  rounded-sm text-center font-bold w-full"
+            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow"
           >
             BACK
-          </button>
+          </button> 
           <button
             onClick={onNextStep}
             className={`p-2 w-full rounded-sm text-center font-bold ${
