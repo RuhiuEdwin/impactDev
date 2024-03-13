@@ -15,10 +15,10 @@ type FormData = {
   emailAddress: string;
   companyName: string;
   helpType: string[];
-
   companySize: string;
   countryOfOperations: string;
   sustainabilityInitiatives: string;
+  sustainabilityInitiativesEngaged: string;
 };
 
 const questionsComponent = ({
@@ -35,6 +35,7 @@ const questionsComponent = ({
     companySize: "",
     countryOfOperations: "",
     sustainabilityInitiatives: "",
+    sustainabilityInitiativesEngaged : ""
   });
 
   const handleNextStep = () => {

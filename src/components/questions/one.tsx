@@ -4,6 +4,7 @@ type FormData = {
   companySize: string;
   countryOfOperations: string;
   sustainabilityInitiatives: string;
+  sustainabilityInitiativesEngaged: string;
 };
 
 type TwoProps = {
@@ -140,6 +141,7 @@ const Two: React.FC<TwoProps> = ({
               <label className="text-xs lg:text-sm font-thin">No</label>
             </div>
           </div>
+          {formData.sustainabilityInitiatives ===  "Yes" && (
           <div className="flex flex-col gap-1 items-start w-full">
             <h4 className=" text-sm">
               If yes, please briefly describe your current sustainability
@@ -148,11 +150,12 @@ const Two: React.FC<TwoProps> = ({
             <textarea
               rows={4}
               name="sustainabilityInitiatives"
-              value={formData.sustainabilityInitiatives}
+              value={formData.sustainabilityInitiativesEngaged}
               onChange={handleChange}
               className="w-full bg-white rounded-sm pl-2 text-navy"
             ></textarea>
           </div>
+          )}
         </div>
         <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full">
           <button
