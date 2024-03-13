@@ -19,15 +19,15 @@ const waitlistForm = ({ onNextStep }: { onNextStep: onNextStep }) => {
       <form className="flex flex-col gap-3 mt-5 items-start w-full">
         <div className="flex flex-col gap-1 items-start w-full">
           <h4 className="font-light text-sm">FULL NAMES</h4>
-          <input className="w-full bg-white rounded-sm" />
+          <input className="w-full bg-white rounded-sm lg:p-3 pl-2 p-1" />
         </div>
         <div className="flex flex-col gap-1 items-start w-full">
           <h4 className="font-light text-sm">EMAIL ADDRESS</h4>
-          <input className="w-full bg-white rounded-sm" />
+          <input className="w-full bg-white rounded-sm lg:p-3 pl-2 p-1" />
         </div>
         <div className="flex flex-col gap-1 items-start w-full">
           <h4 className="font-light text-sm">COMPANY NAME</h4>
-          <input className="w-full bg-white rounded-sm" />
+          <input className="w-full bg-white rounded-sm lg:p-3 pl-2 p-1" />
         </div>
         <div className="flex flex-col gap-1 items-start">
           <h4 className="font-light text-sm">HOW CAN WE HELP YOU?</h4>

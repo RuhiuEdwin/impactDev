@@ -22,7 +22,7 @@ const testimonyComponent = () => {
   return (
     <div className="w-full px-5 py-10 lg:py-20 flex flex-col items-start gap-5">
       <div className=" max-w-screen-xl m-auto flex flex-col ga-5 items-start">
-        <h1 className="text-xl lg:text-2xl text-navy font-light text-center mb-5">
+        <h1 className="text-xl lg:text-3xl text-navy font-light text-center mb-5">
           WHAT OUR CLIENTS SAY
         </h1>
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between items-center gap-5 lg:gap-20 max-w-screen-lg m-auto">
@@ -35,6 +35,7 @@ const testimonyComponent = () => {
             const flexClasses = isEven
               ? "flex-col items-end"
               : "flex-col items-start";
+            const reverse = isEven ? "flex-row-reverse" : "flex";
 
             return (
               <div
@@ -42,7 +43,7 @@ const testimonyComponent = () => {
                 className={`flex flex-col gap-10 ${flexClasses}`}
               >
                 <div
-                  className={`bg-green bg-opacity-60 px-3 py-5 rounded-xl relative lg:w-4/5 ${positionClasses}`}
+                  className={`bg-green bg-opacity-60 px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative lg:w-4/5 ${positionClasses}`}
                 >
                   <p className="font-light text-center text-xs lg:text-sm  text-navy">
                     {testimonial.testimonial}
@@ -54,7 +55,7 @@ const testimonyComponent = () => {
             border-r-[10px] border-r-transparent ${positionClasses}`}
                   ></div>
                 </div>
-                <div className={`flex items-start gap-2 ${flexClasses}`}>
+                <div className={`flex items-start lg:items-center gap-2 ${reverse}`}>
                   <div>
                     {/* Render image */}
                     <img

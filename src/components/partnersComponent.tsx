@@ -1,15 +1,31 @@
 // import { Carousel } from 'react-responsive-carousel';
 
 const partnersComponent = () => {
-  const logos = ["k.png", "ku.png", "m.png", "b.png", "bl.png"];
+  const logos = [
+    "k.png",
+    "ku.png",
+    "m.png",
+    "b.png",
+    "bl.png",
+    "k.png",
+    "ku.png",
+    "m.png",
+    "b.png",
+    "bl.png",
+    "k.png",
+    "ku.png",
+    "m.png",
+    "b.png",
+    "bl.png",
+  ];
 
   return (
-    <div className="bg-snow px-5 py-10 lg:py-20 border-olive border border-opacity-70 w-screen">
-      <div className=" max-w-screen-xl m-auto">
+    <div className="bg-snow px-5 py-10 border-olive border border-opacity-70 w-screen">
+      <div className="max-w-screen-xl m-auto">
         <h1 className="text-lg lg:text-2xl text-navy font-light text-center mb-5">
           FIND OUT WHY ALL THESE COMPANIES HAVE CHOSEN US AS THEIR SOLUTION
         </h1>
-        <div className="flex items-center overflow-x-auto">
+        <div className="flex items-center overflow-x-auto max-w-screen-lg m-auto">
           {/* <Carousel showArrows={true} > */}
           {logos.map((logo, index) => (
             <img

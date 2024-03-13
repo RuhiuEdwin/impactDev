@@ -76,7 +76,7 @@ const four = ({
             Any specific features or content you would like to see in the
             sustainability tools/resources?
           </h4>
-          <textarea rows={6} className="w-full bg-white rounded-sm"></textarea>
+          <textarea rows={4} className="w-full bg-white rounded-sm p-2"></textarea>
         </div>
         <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full">
           <button

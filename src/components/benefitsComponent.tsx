@@ -28,10 +28,10 @@ const benefitsComponents = () => {
           {/* Map over the array to render each perk */}
           {benefitsList.map((perk, index) => (
             <div key={index} className="flex flex-col items-center gap-5">
-              <div className="flex justify-center items-center p-3 rounded-full bg-none border-4 border-olive">
+              <div className="flex justify-center items-center p-3 lg:p-5 rounded-full bg-none border-4 border-olive">
                 {/* Render icon */}
                 <img
-                  className="w-20 h-20"
+                  className="w-20 h-20 lg:w-24 lg:h-24"
                   src={`/${perk.icon}`}
                   alt={perk.title}
                 />
@@ -39,9 +39,9 @@ const benefitsComponents = () => {
 
               <div className="flex flex-col items-center text-center w-3/4 gap-2">
                 {/* Render title */}
-                <h4 className="font-bold">{perk.title}</h4>
+                <h4 className="font-bold  lg:text-lg">{perk.title}</h4>
                 {/* Render details */}
-                <p className="font-light text-xs">{perk.details}</p>
+                <p className="font-light text-xs lg:text-sm">{perk.details}</p>
               </div>
             </div>
           ))}

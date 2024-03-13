@@ -46,7 +46,7 @@ const one = ({
           <h4 className="font-light text-sm">
             Where is the country of your operations
           </h4>
-          <input className="w-full bg-white rounded-sm" />
+          <input className="w-full bg-white rounded-sm lg:p-3 pl-2 p-1" />
         </div>
         <div className="flex flex-col gap-1 items-start w-full">
           <h4 className="text-sm">
@@ -70,7 +70,7 @@ const one = ({
             </h4>
             <textarea
               rows={4}
-              className="w-full bg-white rounded-sm"
+              className="w-full bg-white rounded-sm pl-2"
             ></textarea>
           </div>
         </div>

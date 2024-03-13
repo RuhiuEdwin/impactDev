@@ -60,7 +60,7 @@ const two = ({
             organization is already familiar with or interested in aligning
             with? (e.g., ISO 14001, GRI Standards, Fairtrade Standards)
           </h4>
-          <textarea rows={4} className="w-full bg-white rounded-sm"></textarea>
+          <textarea rows={4} className="w-full bg-white rounded-sm p-2"></textarea>
         </div>
         <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full">
           <button

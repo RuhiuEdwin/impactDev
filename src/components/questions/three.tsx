@@ -45,7 +45,7 @@ const three = ({
             <h4 className="text-sm">Other (please specify)</h4>
             <textarea
               rows={4}
-              className="w-full bg-white rounded-sm"
+              className="w-full bg-white rounded-sm p-2"
             ></textarea>
           </div>
         </div>
