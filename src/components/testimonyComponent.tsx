@@ -41,10 +41,10 @@ const testimonyComponent = () => {
             return (
               <div
                 key={index}
-                className={`flex flex-col gap-10 ${flexClasses} ${border}`}
+                className={`flex flex-col gap-14 ${flexClasses} ${border}`}
               >
                 <div
-                  className={`bg-green bg-opacity-60 px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative lg:w-4/5 ${positionClasses}`}
+                  className={`bg-green bg-opacity-60 px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative lg:w-11/12 ${positionClasses}`}
                 >
                   <p className="font-light text-center text-xs lg:text-sm  text-navy">
                     {testimonial.testimonial}

@@ -17,7 +17,7 @@ const featuresList = [
 
 const featuresComponent = () => {
   return (
-    <div className=" text-navy px-5 py-5 bg-green bg-opacity-30 w-screen">
+    <div className=" text-navy px-5 py-5 lg:py-10 bg-green bg-opacity-30 w-screen">
       <div className="m-auto lg:w-1/2 flex flex-col gap-5">
         <h1 className="text-lg lg:text-2xl font-bold text-center mb-5">
           <span className="text-olive">Optimize, Innovate, Certify:</span> A
