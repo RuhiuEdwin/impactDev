@@ -17,11 +17,19 @@ const callToAction3Component = ({ openWaitlistForm }: { openWaitlistForm: OpenWa
         />
         <div className="absolute inset-0 bg-darkGreen opacity-80"></div>
       </div>
-      
+
       {/* Content */}
-      <div className="relative z-1 flex flex-col gap-2 justify-center items-center h-full text-snow p-5 text-center">
-        <h1 className="text-xl lg:text-2xl font-bold text-center mb-8">Let us help you achieve your Sustainability Goals with Confidence and Impact.</h1>
-        <button onClick={openWaitlistForm}  className="text-snow bg-navy py-2 px-5 rounded-sm text-center font-bold">FREE TOOLBOX ACCESS</button>
+      <div className="relative w-10/12 m-auto lg:max-w-screen-md  z-1 flex flex-col gap-2 justify-center items-center h-full text-snow p-5 text-center">
+        <h1 className="text-xl lg:text-3xl font-bold text-center lg:mb-3 mb-8">
+          Let us help you achieve your Sustainability Goals with Confidence and
+          Impact.
+        </h1>
+        <button
+          onClick={openWaitlistForm}
+          className="text-snow bg-navy py-2 px-5 rounded-sm text-center font-bold hover:bg-darkGreen"
+        >
+          FREE TOOLBOX ACCESS
+        </button>
       </div>
     </div>
   );

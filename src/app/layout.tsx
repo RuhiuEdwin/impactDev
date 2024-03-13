@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
 // Import all font weights of Montserrat
 import "@fontsource/montserrat/100.css";
 import "@fontsource/montserrat/200.css";

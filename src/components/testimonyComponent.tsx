@@ -36,11 +36,12 @@ const testimonyComponent = () => {
               ? "flex-col items-end"
               : "flex-col items-start";
             const reverse = isEven ? "flex-row-reverse" : "flex";
+            const border = isEven ? "border-l border-l-darkGreen" : "";
 
             return (
               <div
                 key={index}
-                className={`flex flex-col gap-10 ${flexClasses}`}
+                className={`flex flex-col gap-10 ${flexClasses} ${border}`}
               >
                 <div
                   className={`bg-green bg-opacity-60 px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative lg:w-4/5 ${positionClasses}`}
@@ -55,7 +56,9 @@ const testimonyComponent = () => {
             border-r-[10px] border-r-transparent ${positionClasses}`}
                   ></div>
                 </div>
-                <div className={`flex items-start lg:items-center gap-2 ${reverse}`}>
+                <div
+                  className={`flex items-start lg:items-center gap-2 ${reverse}`}
+                >
                   <div>
                     {/* Render image */}
                     <img

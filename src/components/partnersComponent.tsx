@@ -1,4 +1,5 @@
-// import { Carousel } from 'react-responsive-carousel';
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from "react-responsive-carousel";
 
 const partnersComponent = () => {
   const logos = [
@@ -26,7 +27,7 @@ const partnersComponent = () => {
           FIND OUT WHY ALL THESE COMPANIES HAVE CHOSEN US AS THEIR SOLUTION
         </h1>
         <div className="flex items-center overflow-x-auto max-w-screen-lg m-auto">
-          {/* <Carousel showArrows={true} > */}
+          {/* <Carousel> */}
           {logos.map((logo, index) => (
             <img
               key={index}

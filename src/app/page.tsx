@@ -20,6 +20,8 @@ const Home = () => {
   const [isWaitlistFormOpen, setIsWaitlistFormOpen] = useState(false);
 
   const openWaitlistForm = () => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
     setIsWaitlistFormOpen(true);
     // Prevent scrolling
     document.body.style.overflow = "hidden";

@@ -34,7 +34,7 @@ const heroComponent = ({
         </p>
         <button
           onClick={openWaitlistForm}
-          className="text-snow bg-navy py-2 px-5 rounded-sm text-center font-bold"
+          className="text-snow bg-navy py-2 px-5 rounded-sm text-center font-bold hover:bg-darkGreen"
         >
           FREE TOOLBOX ACCESS
         </button>

@@ -17,7 +17,7 @@ const navComponent = ({ openWaitlistForm }: { openWaitlistForm: OpenWaitlistForm
         />
         <button
           onClick={openWaitlistForm}
-          className="text-white bg-navy py-2 px-5 rounded-sm text-center font-bold"
+          className="text-white bg-navy py-2 px-5 rounded-sm text-center font-bold hover:bg-darkGreen"
         >
           FREE TOOLBOX ACCESS
         </button>
