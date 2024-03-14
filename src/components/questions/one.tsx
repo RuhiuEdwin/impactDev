@@ -149,7 +149,7 @@ const Two: React.FC<TwoProps> = ({
               </h4>
               <textarea
                 rows={4}
-                name="sustainabilityInitiatives"
+                name="sustainabilityInitiativesEngaged"
                 value={formData.sustainabilityInitiativesEngaged}
                 onChange={handleChange}
                 className="w-full bg-white rounded-sm pl-2 text-navy"

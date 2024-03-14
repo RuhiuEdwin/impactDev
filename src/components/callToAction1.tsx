@@ -6,7 +6,7 @@ type OpenWaitlistForm = () => void;
 
 const callToAction1Component = ({ openWaitlistForm }: { openWaitlistForm: OpenWaitlistForm }) => {
   return (
-    <div className="relative h-[300px] w-screen">
+    <div className="relative h-[300px]  lg:h-[200px] w-screen">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -15,7 +15,7 @@ const callToAction1Component = ({ openWaitlistForm }: { openWaitlistForm: OpenWa
           layout="fill"
           objectFit="cover"
         />
-        <div className="absolute inset-0 bg-darkGreen opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-green to-navy opacity-90"></div>
       </div>
 
       {/* Content */}
@@ -26,7 +26,7 @@ const callToAction1Component = ({ openWaitlistForm }: { openWaitlistForm: OpenWa
         </h1>
         <button
           onClick={openWaitlistForm}
-          className="text-snow bg-navy py-2 px-5 rounded-sm text-center font-bold hover:bg-darkGreen"
+          className="text-snow bg-navy py-2 w-full lg:w-1/2 rounded-sm text-center font-bold hover:bg-darkGreen"
         >
           FREE TOOLBOX ACCESS
         </button>

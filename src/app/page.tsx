@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NavBar from "../components/navComponent";
 // import Questions from "../components/questionsComponent";
 import HeroPage from "../components/heroComponent";
@@ -32,6 +32,28 @@ const Home = () => {
     // Allow scrolling
     document.body.style.overflow = "auto";
   };
+    useEffect(() => {
+      // Add Google Tag Manager script dynamically
+      const script = document.createElement("script");
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-136LZJM1YM";
+      script.async = true;
+      document.head.appendChild(script);
+
+      // Initialize Google Tag Manager
+      const gtmScript = document.createElement("script");
+      gtmScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-136LZJM1YM');
+    `;
+      document.head.appendChild(gtmScript);
+      // Clean up function
+      return () => {
+        document.head.removeChild(script);
+        document.head.removeChild(gtmScript);
+      };
+    }, []);
 
   return (
     <main className="relative font-sans flex min-h-screen flex-col items-start">

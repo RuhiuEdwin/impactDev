@@ -36,7 +36,9 @@ const testimonyComponent = () => {
               ? "flex-col items-end"
               : "flex-col items-start";
             const reverse = isEven ? "flex-row-reverse" : "flex";
-            const border = isEven ? "lg:border-l lg:border-l-darkGreen" : "";
+            const border = isEven
+              ? "lg:border-l lg:from-darkGreen lg:to-navy lg:border-gradient-to-b"
+              : "";
 
             return (
               <div
@@ -44,7 +46,7 @@ const testimonyComponent = () => {
                 className={`flex flex-col gap-14 ${flexClasses} ${border}`}
               >
                 <div
-                  className={`bg-green bg-opacity-60 px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative lg:w-11/12 ${positionClasses}`}
+                  className={`bg-opGreen px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative lg:w-11/12 ${positionClasses}`}
                 >
                   <p className="font-light text-center text-xs lg:text-sm  text-navy">
                     {testimonial.testimonial}
@@ -52,7 +54,7 @@ const testimonyComponent = () => {
                   <div
                     className={`absolute w-0 h-0 
             border-l-[10px] border-l-transparent
-            border-t-[20px] border-green border-opacity-60
+            border-t-[20px] border-opGreen 
             border-r-[10px] border-r-transparent ${positionClasses}`}
                   ></div>
                 </div>

@@ -21,6 +21,7 @@ const Four: React.FC<FourProps> = ({
   updateFormData,
 }) => {
   const [isFormFilled, setIsFormFilled] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     // Check if all form fields are filled
@@ -41,7 +42,7 @@ const Four: React.FC<FourProps> = ({
 
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-
+  setIsSubmitting(true);
   console.log(formData);
 
   try {
@@ -49,9 +50,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       publicKey: "rxKL7gEdwZxXJr98e",
     });
     console.log("SUCCESS!");
+    setIsSubmitting(false);
     onNextStep();
   } catch (error) {
     console.error("FAILED...", error);
+    setIsSubmitting(false);
     // Handle the error appropriately, if needed
   }
 };
@@ -226,9 +229,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             className={`text-snow p-2  rounded-sm text-center font-bold w-full ${
               isFormFilled ? "bg-darkGreen" : "bg-snow"
             }`}
-            disabled={!isFormFilled}
+            disabled={!isFormFilled || isSubmitting}
           >
-            SUBMIT
+            {isSubmitting ? "SUBMITTING..." : "SUBMIT"}
           </button>
         </div>
       </form>

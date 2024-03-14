@@ -16,6 +16,8 @@ const config: Config = {
         darkGreen: "#6E9508",
         white: "#FFFFFF",
         olive: "#577507",
+        opGreen: "#d8e1ce",
+        iconGreen: "#37761d"
       },
       fontFamily: {
         // Add Montserrat to the sans-serif font stack

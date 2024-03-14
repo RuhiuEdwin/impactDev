@@ -22,19 +22,21 @@ const perksComponents = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center  gap-5 text-navy px-5 py-10 lg:py-20 lg:py-20 bg-green bg-opacity-30 w-screen">
+    <div className="flex justify-center items-center  gap-5 text-navy px-5 py-10 lg:py-20 bg-opGreen w-screen">
       <div className=" max-w-screen-xl m-auto">
         <div className="flex flex-col lg:flex-row lg:items-center items-center gap-5">
           {/* Map over the array to render each perk */}
           {perksList.map((perk, index) => (
             <div key={index} className="flex flex-col items-center gap-5">
-              <div className="flex justify-center items-center p-3 lg:p-5 rounded-full bg-none border-4 border-olive">
-                {/* Render icon */}
-                <img
-                  className="w-20 h-20 lg:w-24 lg:h-24"
-                  src={`/${perk.icon}`}
-                  alt={perk.title}
-                />
+              <div className="flex justify-center items-center p-2 rounded-full bg-gradient-to-b from-green to-navy">
+                <div className="w-full h-full bg-opGreen rounded-full p-4 flex items-center justify-center">
+                  {/* Render icon */}
+                  <img
+                    className="w-20 h-20 lg:w-24 lg:h-24"
+                    src={`/${perk.icon}`}
+                    alt={perk.title}
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col items-center text-center w-3/4 gap-2">
