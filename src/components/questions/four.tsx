@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 type FormData = {
   budget: string;
@@ -38,11 +39,23 @@ const Four: React.FC<FourProps> = ({
     updateFormData({ [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(formData);
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  console.log(formData);
+
+  try {
+    await emailjs.send("service_1n66ce3", "template_he2puiu", formData, {
+      publicKey: "rxKL7gEdwZxXJr98e",
+    });
+    console.log("SUCCESS!");
     onNextStep();
-  };
+  } catch (error) {
+    console.error("FAILED...", error);
+    // Handle the error appropriately, if needed
+  }
+};
+
 
   return (
     <div>
