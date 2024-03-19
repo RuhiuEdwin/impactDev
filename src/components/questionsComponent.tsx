@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Main from "./waitlistForm";
 import One from "./questions/one";
 import Two from "./questions/two";
@@ -41,31 +41,30 @@ const questionsComponent = ({
   closeWaitlistForm: closeWaitlistForm;
 }) => {
   const [currentStep, setCurrentStep] = useState(1); // Initial step
-const [formData, setFormData] = useState<FormData>({
-  fullName: "",
-  emailAddress: "",
-  companyName: "",
-  helpType: [],
-  companySize: "",
-  countryOfOperations: "",
-  sustainabilityInitiatives: "",
-  sustainabilityInitiativesEngaged: "",
-  sustainabilityPriorities: {
-    environmentalConservation: 1, 
-    socialResponsibility: 1,
-    fairTrade: 1,
-    climateAction: 1,
-    genderEquality: 1,
-  },
-  sustainabilityStandards: "",
-  goals: [],
-  otherGoal: "",
-  sustainabilityTeam: [],
-  budget: "",
-  preferredFormat: "",
-  specificFeatures: "",
-});
-
+  const [formData, setFormData] = useState<FormData>({
+    fullName: "",
+    emailAddress: "",
+    companyName: "",
+    helpType: [],
+    companySize: "",
+    countryOfOperations: "",
+    sustainabilityInitiatives: "",
+    sustainabilityInitiativesEngaged: "",
+    sustainabilityPriorities: {
+      environmentalConservation: 1,
+      socialResponsibility: 1,
+      fairTrade: 1,
+      climateAction: 1,
+      genderEquality: 1,
+    },
+    sustainabilityStandards: "",
+    goals: [],
+    otherGoal: "",
+    sustainabilityTeam: [],
+    budget: "",
+    preferredFormat: "",
+    specificFeatures: "",
+  });
 
   const handleNextStep = () => {
     console.log(formData);
@@ -78,13 +77,33 @@ const [formData, setFormData] = useState<FormData>({
   const updateFormData = (data: Partial<FormData>) => {
     setFormData((prevData) => ({ ...prevData, ...data }));
   };
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        closeWaitlistForm();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeWaitlistForm]);
 
   return (
     <div
       // onClick={closeWaitlistForm}
       className="bg-navy bg-opacity-40 flex items-center justify-center w-screen h-screen absolute top-0 left-0 z-20"
     >
-      <div className="bg-olive rounded-sm lg:rounded-lg drop-shadow-xl flex flex-col items-center justify-center text-white lg:w-1/3 md:w-2/3 w-11/12 p-5 py-10 pb-10">
+      <div
+        ref={modalRef}
+        className="bg-olive rounded-sm lg:rounded-lg drop-shadow-xl flex flex-col items-center justify-center text-white lg:w-1/3 md:w-2/3 w-11/12 p-5 py-10 pb-10"
+      >
         {currentStep !== 6 ? (
           <h1 className="text-xl lg:text-3xl font-bold text-center pb-2 border-b border-b-darkGreen mb-5">
             Access Impact Tool-Box
@@ -107,6 +126,7 @@ const [formData, setFormData] = useState<FormData>({
             formData={formData}
             updateFormData={updateFormData}
             onPreviousStep={handlePreviousStep}
+            closeWaitlistForm={closeWaitlistForm}
           />
         )}
         {currentStep === 3 && (
@@ -115,6 +135,7 @@ const [formData, setFormData] = useState<FormData>({
             formData={formData}
             updateFormData={updateFormData}
             onPreviousStep={handlePreviousStep}
+            closeWaitlistForm={closeWaitlistForm}
           />
         )}
         {currentStep === 4 && (
@@ -123,6 +144,7 @@ const [formData, setFormData] = useState<FormData>({
             formData={formData}
             updateFormData={updateFormData}
             onPreviousStep={handlePreviousStep}
+            closeWaitlistForm={closeWaitlistForm}
           />
         )}
         {currentStep === 5 && (

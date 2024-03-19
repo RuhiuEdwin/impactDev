@@ -22,8 +22,8 @@ const testimonyComponent = () => {
   return (
     <div className="w-full px-5 py-10 lg:py-20 flex flex-col items-start gap-5">
       <div className=" max-w-screen-xl m-auto flex flex-col ga-5 items-start">
-        <h1 className="text-xl lg:text-3xl text-navy font-light text-center mb-5">
-          WHAT OUR CLIENTS SAY
+        <h1 className="text-xl uppercase lg:text-3xl text-navy font-light text-center mb-10">
+          Dont Just Take Our Word For It!
         </h1>
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between items-center gap-5 lg:gap-20 max-w-screen-lg m-auto">
           {/* Map over the array to render each testimonial */}
@@ -46,7 +46,7 @@ const testimonyComponent = () => {
                 className={`flex flex-col gap-14 ${flexClasses} ${border}`}
               >
                 <div
-                  className={`bg-opGreen px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative lg:w-11/12 ${positionClasses}`}
+                  className={`bg-opGreen px-3 py-5 lg:p-8 rounded-xl lg:rounded-2xl relative drop-shadow-2xl lg:w-11/12 ${positionClasses}`}
                 >
                   <p className="font-light text-center text-xs lg:text-sm  text-navy">
                     {testimonial.testimonial}

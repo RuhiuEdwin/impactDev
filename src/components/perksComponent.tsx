@@ -4,26 +4,29 @@ const perksComponents = () => {
     {
       title: "Increased Long-Term ROI",
       details:
-        "Our tools  empower you to align goals with your organizational values, seamlessly  embedding sustainability into the business ,reducing operational risk and contributing to long-term economic benefits.",
+        "Optimize long-term economic growth by seamlessly integrating sustainability into your business using our tools. Reduce operational risk and align with core values for a sustainable future.",
       icon: "roi.png",
     },
     {
-      title: "Enhanced Sustainability Performance",
+      title: "Enhanced Sustainable Performance",
       details:
-        "Our team of experts will guide you to elevate your sustainability performance by effectively identifying environmental and social impacts, attain required certifications, and maximize the impact of your initiatives.",
+        "Boost sustainability performance with our expert guidance. Identify environmental and social impacts, obtain certifications, and maximize initiative impact with tailored support.",
       icon: "coins.png",
     },
     {
-      title: "Emerging Growth & Market Access",
+      title: "Emerging Market Growth",
       details:
-        "Access to reputable certifications will ensure you benchmark with peers , enhancing your competitive advantage  ultimately driving growth & success in the international marketplace, confidently accessing global markets",
+        "Elevate your international competitiveness with renowned certifications. Benchmark against peers, drive growth confidently, and succeed as you expand globally.",
       icon: "shop.png",
     },
   ];
 
   return (
     <div className="flex justify-center items-center  gap-5 text-navy px-5 py-10 lg:py-20 bg-opGreen w-screen">
-      <div className=" max-w-screen-xl m-auto">
+      <div className=" max-w-screen-xl m-auto flex flex-col">
+        <h1 className="text-xl uppercase lg:text-3xl text-navy font-light text-center mb-10">
+          BENEFITS
+        </h1>
         <div className="flex flex-col lg:flex-row lg:items-center items-center gap-5">
           {/* Map over the array to render each perk */}
           {perksList.map((perk, index) => (

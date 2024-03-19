@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 type FormData = {
   goals: string[];
@@ -9,6 +10,7 @@ type FormData = {
 type ThreeProps = {
   onNextStep: () => void;
   onPreviousStep: () => void;
+  closeWaitlistForm: () => void;
   formData: FormData;
   updateFormData: (data: Partial<FormData>) => void;
 };
@@ -16,10 +18,12 @@ type ThreeProps = {
 const Three: React.FC<ThreeProps> = ({
   onNextStep,
   onPreviousStep,
+  closeWaitlistForm,
   formData,
   updateFormData,
 }) => {
   const [isFormFilled, setIsFormFilled] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     // Check if all form fields are filled
@@ -62,9 +66,31 @@ const Three: React.FC<ThreeProps> = ({
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    console.log(formData);
+
+    try {
+      await emailjs.send("service_1n66ce3", "template_he2puiu", formData, {
+        publicKey: "rxKL7gEdwZxXJr98e",
+      });
+      console.log("SUCCESS!");
+      setIsSubmitting(false);
+      closeWaitlistForm();
+    } catch (error) {
+      console.error("FAILED...", error);
+      setIsSubmitting(false);
+      // Handle the error appropriately, if needed
+    }
+  };
+
   return (
     <div>
-      <form className="flex flex-col gap-3 mt-5 items-start w-full">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-3 mt-5 items-start w-full"
+      >
         <div className="flex flex-col gap-1 items-start">
           <h4 className="text-sm">
             What specific challenges or goals are you hoping to address through
@@ -208,17 +234,23 @@ const Three: React.FC<ThreeProps> = ({
             BACK
           </button>
           <button
-            onClick={onNextStep}
-            className={`p-2 w-full rounded-sm text-center font-bold  ${
-              isFormFilled
-                ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
-                : "bg-snow text-navy"
-            }`}
-            // disabled={!isFormFilled}
+            type="submit"
+            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow hover:text-navy"
           >
-            SUBMIT
+            {isSubmitting ? "LOADING..." : "CLOSE"}
           </button>
         </div>
+        <button
+          onClick={onNextStep}
+          className={`p-2 w-full rounded-sm text-center font-bold ${
+            isFormFilled
+              ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
+              : "bg-snow text-navy"
+          }`}
+          disabled={!isFormFilled}
+        >
+          SUBMIT
+        </button>
       </form>
     </div>
   );

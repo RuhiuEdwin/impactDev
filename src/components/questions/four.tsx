@@ -40,25 +40,24 @@ const Four: React.FC<FourProps> = ({
     updateFormData({ [name]: value });
   };
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  console.log(formData);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    console.log(formData);
 
-  try {
-    await emailjs.send("service_1n66ce3", "template_he2puiu", formData, {
-      publicKey: "rxKL7gEdwZxXJr98e",
-    });
-    console.log("SUCCESS!");
-    setIsSubmitting(false);
-    onNextStep();
-  } catch (error) {
-    console.error("FAILED...", error);
-    setIsSubmitting(false);
-    // Handle the error appropriately, if needed
-  }
-};
-
+    try {
+      await emailjs.send("service_1n66ce3", "template_he2puiu", formData, {
+        publicKey: "rxKL7gEdwZxXJr98e",
+      });
+      console.log("SUCCESS!");
+      setIsSubmitting(false);
+      onNextStep();
+    } catch (error) {
+      console.error("FAILED...", error);
+      setIsSubmitting(false);
+      // Handle the error appropriately, if needed
+    }
+  };
 
   return (
     <div>
@@ -217,17 +216,19 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             className="w-full bg-white rounded-sm p-2 text-navy"
           ></textarea>
         </div>
-        <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full">
+        <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full mt-10">
           <button
             onClick={onPreviousStep}
-            className="text-snow bg-navy p-2  rounded-sm text-center font-bold w-full"
+            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow hover:text-navy"
           >
             BACK
           </button>
           <button
             type="submit"
-            className={`text-snow p-2  rounded-sm text-center font-bold w-full ${
-              isFormFilled ? "bg-darkGreen" : "bg-snow"
+            className={`p-2 w-full rounded-sm text-center font-bold ${
+              isFormFilled
+                ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
+                : "bg-snow text-navy"
             }`}
             disabled={!isFormFilled || isSubmitting}
           >

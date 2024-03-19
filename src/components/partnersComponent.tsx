@@ -3,21 +3,16 @@
 
 const partnersComponent = () => {
   const logos = [
-    "k.png",
-    "ku.png",
-    "m.png",
-    "b.png",
-    "bl.png",
-    "k.png",
-    "ku.png",
-    "m.png",
-    "b.png",
-    "bl.png",
-    "k.png",
-    "ku.png",
-    "m.png",
-    "b.png",
-    "bl.png",
+    "B-FOR-GOOD-LEADERS.png",
+    "B-Lab.png",
+    "EQULS-EU.png",
+    "Futurize.png",
+    "GIvewatts.png",
+    "kenyatta-university.png",
+    "Kiri-Logo.png",
+    "merge.png",
+    "Metap.png",
+    "ONE-TECH.png",
   ];
 
   return (
@@ -31,7 +26,7 @@ const partnersComponent = () => {
           {logos.map((logo, index) => (
             <img
               key={index}
-              src={`/${logo}`}
+              src={`/partners/${logo}`}
               alt={`Logo ${index + 1}`}
               className="inline-block mx-4 w-20 h-auto"
             />

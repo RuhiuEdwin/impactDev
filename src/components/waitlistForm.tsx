@@ -42,7 +42,6 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
     }
   };
 
-
   useEffect(() => {
     // Check if all form fields are filled
     const checkFormFilled = () => {
@@ -58,18 +57,18 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
     setIsFormFilled(checkFormFilled());
   }, [formData]);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      console.log(formData);
-      onNextStep();
-    };
-    
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+    onNextStep();
+  };
+
   return (
     <div>
-      <p className="text-sm lg:text-base  font-light text-center mt-2">
-        ImpacTower provides a Toolbox of{" "}
-        <span className="text-navy font-bold">
-          Impact resources & Toolkits 
+      <p className="text-sm lg:text-base text-center mt-2">
+        ImpacTower provides a Toolbox of Impact resources & Toolkits <br></br>
+        <span className="text-navy font-bold uppercase">
+          Sign up to receive free access
         </span>
       </p>
       <form
