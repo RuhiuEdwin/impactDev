@@ -92,77 +92,35 @@ const Three: React.FC<ThreeProps> = ({
         className="flex flex-col gap-3 mt-5 items-start w-full"
       >
         <div className="flex flex-col gap-1 items-start">
-          <h4 className="text-sm">
+          <h4 className="font-bold text-sm">
             What specific challenges or goals are you hoping to address through
             access to sustainability & Impact tools?
           </h4>
           <div className="flex flex-col items-start">
             {/* Checkboxes for goals */}
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="enhancingSustainability"
-                name="goals"
-                value="Enhancing sustainability performance"
-                checked={formData.goals.includes(
-                  "Enhancing sustainability performance"
-                )}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                Enhancing sustainability performance
-              </label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="newMarkets"
-                name="goals"
-                value="Accessing new markets/opportunities"
-                checked={formData.goals.includes(
-                  "Accessing new markets/opportunities"
-                )}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                Accessing new markets/opportunities
-              </label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="stakeHolder"
-                name="goals"
-                value="Meeting stakeholder expectations"
-                checked={formData.goals.includes(
-                  "Meeting stakeholder expectations"
-                )}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                Meeting stakeholder expectations
-              </label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="costReduction"
-                name="goals"
-                value="Cost reduction/savings through efficiency improvements"
-                checked={formData.goals.includes(
-                  "Cost reduction/savings through efficiency improvements"
-                )}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                Cost reduction/savings through efficiency improvements
-              </label>
-            </div>
+            {[
+              "Enhancing sustainability performance",
+              "Accessing new markets/opportunities",
+              "Meeting stakeholder expectations",
+              "Cost reduction/savings through efficiency improvements",
+            ].map((goal) => (
+              <div key={goal} className="flex gap-1 items-center">
+                <input
+                  type="checkbox"
+                  id={goal.replace(/\W/g, "-").toLowerCase()}
+                  name="goals"
+                  value={goal}
+                  checked={formData.goals.includes(goal)}
+                  onChange={handleChange}
+                />
+                <label className="text-xs lg:text-sm">{goal}</label>
+              </div>
+            ))}
           </div>
         </div>
         {/* Textarea for other goal */}
         <div className="flex flex-col gap-1 items-start w-full">
-          <h4 className="text-sm">Other (please specify)</h4>
+          <h4 className="font-bold text-sm">Other (please specify)</h4>
           <textarea
             rows={4}
             name="otherGoal"
@@ -173,69 +131,42 @@ const Three: React.FC<ThreeProps> = ({
         </div>
         {/* Checkboxes for sustainability team */}
         <div className="flex flex-col gap-1 items-start w-full">
-          <h4 className="text-sm">
+          <h4 className="font-bold text-sm">
             Do you have a designated sustainability team or officer responsible
             for implementing sustainable and/or responsible practices?
           </h4>
           <div className="flex flex-col items-start">
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="internalTeam"
-                name="sustainabilityTeam"
-                value="Have internal team / person"
-                checked={formData.sustainabilityTeam.includes(
-                  "Have internal team / person"
-                )}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                Have internal team / person
-              </label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="consultants"
-                name="sustainabilityTeam"
-                value="Work with external consultant(s)"
-                checked={formData.sustainabilityTeam.includes(
-                  "Work with external consultant(s)"
-                )}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                Work with external consultant(s)
-              </label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="partner"
-                name="sustainabilityTeam"
-                value="In search for a partner / team"
-                checked={formData.sustainabilityTeam.includes(
-                  "In search for a partner / team"
-                )}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                In search for a partner / team
-              </label>
-            </div>
+            {/* Checkboxes for sustainability team */}
+            {[
+              "Have internal team / person",
+              "Work with external consultant(s)",
+              "In search for a partner / team",
+            ].map((option) => (
+              <div key={option} className="flex gap-1 items-center">
+                <input
+                  type="checkbox"
+                  id={option.replace(/\W/g, "-").toLowerCase()}
+                  name="sustainabilityTeam"
+                  value={option}
+                  checked={formData.sustainabilityTeam.includes(option)}
+                  onChange={handleChange}
+                />
+                <label className="text-xs lg:text-sm">{option}</label>
+              </div>
+            ))}
           </div>
         </div>
         {/* Navigation buttons */}
         <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full mt-10">
           <button
             onClick={onPreviousStep}
-            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow hover:text-navy"
+            className="text-navy p-2 border border-navy rounded-sm text-center font-bold w-full hover:bg-navy hover:text-snow"
           >
             BACK
           </button>
           <button
             type="submit"
-            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow hover:text-navy"
+            className="text-navy p-2 border border-navy rounded-sm text-center font-bold w-full hover:bg-navy hover:text-snow"
           >
             {isSubmitting ? "LOADING..." : "CLOSE"}
           </button>
@@ -244,7 +175,7 @@ const Three: React.FC<ThreeProps> = ({
           onClick={onNextStep}
           className={`p-2 w-full rounded-sm text-center font-bold ${
             isFormFilled
-              ? "bg-navy text-darkGreen hover:bg-darkGreen hover:border hover:border-darkGreen hover:text-snow"
+              ? "bg-navy text-snow hover:bg-darkGreen hover:border hover:border-darkGreen"
               : "bg-snow text-navy"
           }`}
           disabled={!isFormFilled}

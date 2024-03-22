@@ -87,7 +87,7 @@ const Three: React.FC<ThreeProps> = ({
         className="flex flex-col gap-3 mt-5 items-start w-full"
       >
         <div className="flex flex-col gap-1 items-start">
-          <h4 className="text-sm">
+          <h4 className="font-bold text-sm">
             Rank the following sustainability priorities for your organization{" "}
             <br />
             (1 = highest priority, 5 = lowest priority)
@@ -106,7 +106,7 @@ const Three: React.FC<ThreeProps> = ({
                 }
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-light">
+              <label className="text-xs lg:text-sm">
                 Environmental conservation (e.g., reducing carbon footprint,
                 waste management)
               </label>
@@ -122,7 +122,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.socialResponsibility}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-light">
+              <label className="text-xs lg:text-sm">
                 Social responsibility (e.g., fair labor practices, community
                 engagement)
               </label>
@@ -138,7 +138,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.fairTrade}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-light">
+              <label className="text-xs lg:text-sm">
                 Fair trade (e.g., ethical sourcing, supply chain transparency)
               </label>
             </div>
@@ -153,7 +153,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.climateAction}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-light">
+              <label className="text-xs lg:text-sm">
                 Climate action (e.g., mitigation strategies, adaptation
                 measures)
               </label>
@@ -169,7 +169,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.genderEquality}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-light">
+              <label className="text-xs lg:text-sm">
                 Gender equality ,diversity and inclusion
               </label>
             </div>
@@ -177,7 +177,7 @@ const Three: React.FC<ThreeProps> = ({
         </div>
         {/* Add textarea for sustainability standards */}
         <div className="flex flex-col gap-1 items-start w-full">
-          <h4 className="text-sm">
+          <h4 className="font-bold text-sm">
             Are there any specific sustainability standards or frameworks your
             organization is already familiar with or interested in aligning
             with? (e.g., ISO 14001, GRI Standards, Fairtrade Standards)
@@ -193,13 +193,13 @@ const Three: React.FC<ThreeProps> = ({
         <div className="flex flex-col lg:flex-row gap-2 justify-center lg:justify-between items-center w-full mt-10">
           <button
             onClick={onPreviousStep}
-            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow hover:text-navy"
+            className="text-navy p-2 border border-navy rounded-sm text-center font-bold w-full hover:bg-navy hover:text-snow"
           >
             BACK
           </button>
           <button
             type="submit"
-            className="text-snow p-2 border border-snow rounded-sm text-center font-bold w-full hover:bg-snow hover:text-navy"
+            className="text-navy p-2 border border-navy rounded-sm text-center font-bold w-full hover:bg-navy hover:text-snow"
           >
             {isSubmitting ? "LOADING..." : "CLOSE"}
           </button>
@@ -208,7 +208,7 @@ const Three: React.FC<ThreeProps> = ({
           onClick={onNextStep}
           className={`p-2 w-full rounded-sm text-center font-bold ${
             isFormFilled
-              ? "bg-navy text-darkGreen hover:bg-darkGreen hover:border hover:border-darkGreen hover:text-snow"
+              ? "bg-navy text-snow hover:bg-darkGreen hover:border hover:border-darkGreen"
               : "bg-snow text-navy"
           }`}
           disabled={!isFormFilled}

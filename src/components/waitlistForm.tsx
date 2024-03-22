@@ -31,9 +31,9 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
       let updatedHelpType = [...formData.helpType];
 
       if (checked) {
-        updatedHelpType.push(value); // Add to array if checked
+        updatedHelpType.push(value);
       } else {
-        updatedHelpType = updatedHelpType.filter((type) => type !== value); // Remove from array if unchecked
+        updatedHelpType = updatedHelpType.filter((type) => type !== value);
       }
 
       updateFormData({ [name]: updatedHelpType });
@@ -76,8 +76,9 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
         className="flex flex-col gap-3 mt-5 items-start w-full "
       >
         <div className="flex flex-col gap-1 items-start w-full">
-          <h4 className="font-light text-sm">FULL NAMES</h4>
+          <h4 className="font-bold text-sm">FULL NAMES</h4>
           <input
+            required
             type="text"
             name="fullName"
             value={formData.fullName}
@@ -87,8 +88,9 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
           />
         </div>
         <div className="flex flex-col gap-1 items-start w-full">
-          <h4 className="font-light text-sm">EMAIL ADDRESS</h4>
+          <h4 className="font-bold text-sm">EMAIL ADDRESS</h4>
           <input
+            required
             type="email"
             name="emailAddress"
             value={formData.emailAddress}
@@ -98,74 +100,43 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
           />
         </div>
         <div className="flex flex-col gap-1 items-start w-full">
-          <h4 className="font-light text-sm">COMPANY NAME</h4>
+          <h4 className="font-bold text-sm">COMPANY NAME</h4>
           <input
+            required
             type="text"
             name="companyName"
             value={formData.companyName}
             onChange={handleChange}
             placeholder="Company Name"
-            className="w-full bg-white rounded-sm lg:p-3 pl-2 p-1 text-navy"
+            className="w-full bg-white rounded-sm lg:p-3 pl-2 p-1 text-navy "
           />
         </div>
         <div className="flex flex-col gap-1 items-start">
-          <h4 className="font-light text-sm">HOW CAN WE HELP YOU?</h4>
+          <h4 className="font-bold text-sm">HOW CAN WE HELP YOU?</h4>
           <div className="flex flex-col items-start">
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="guides"
-                name="helpType"
-                value="guides"
-                checked={formData.helpType.includes("guides")}
-                onChange={handleChange}
-              />
-              <label className="text-xs lg:text-sm font-light">GUIDES</label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="toolkits"
-                name="helpType"
-                value="toolkits"
-                onChange={handleChange}
-                checked={formData.helpType.includes("toolkits")}
-              />
-              <label className="text-xs lg:text-sm font-light">TOOLKITS</label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="certifications"
-                name="helpType"
-                value="certifications"
-                onChange={handleChange}
-                checked={formData.helpType.includes("certifications")}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                CERTIFICATIONS
-              </label>
-            </div>
-            <div className="flex gap-1 items-center">
-              <input
-                type="checkbox"
-                id="all"
-                name="helpType"
-                value="all"
-                onChange={handleChange}
-                checked={formData.helpType.includes("all")}
-              />
-              <label className="text-xs lg:text-sm font-light">
-                ALL THE ABOVE
-              </label>
-            </div>
+            {/* Checkbox options */}
+            {["guides", "toolkits", "certifications", "all"].map((option) => (
+              <div key={option} className="flex gap-1 items-center">
+                <input
+                  type="checkbox"
+                  id={option}
+                  name="helpType"
+                  value={option}
+                  checked={formData.helpType.includes(option)}
+                  onChange={handleChange}
+                />
+                <label className="text-xs lg:text-sm">
+                  {option.toUpperCase()}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
         <button
           type="submit"
           className={`p-2 w-full rounded-sm text-center font-bold mt-10 ${
             isFormFilled
-              ? "bg-navy text-darkGreen hover:bg-darkGreen hover:border hover:border-darkGreen hover:text-snow"
+              ? "bg-navy text-snow hover:bg-darkGreen hover:border hover:border-darkGreen"
               : "bg-snow text-navy"
           }`}
           disabled={!isFormFilled}

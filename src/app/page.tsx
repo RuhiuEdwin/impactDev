@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import NavBar from "../components/navComponent";
 // import Questions from "../components/questionsComponent";
 import HeroPage from "../components/heroComponent";
@@ -18,7 +19,16 @@ import Image from "next/image";
 
 const Home = () => {
   const [isWaitlistFormOpen, setIsWaitlistFormOpen] = useState(false);
-
+  useEffect(() => {
+    // Check if window is available (client-side)
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      // Check if query parameter "waitlist" exists and its value is "true"
+      if (params.get("waitlist") === "true") {
+        openWaitlistForm();
+      }
+    }
+  }, []);
   const openWaitlistForm = () => {
     // Scroll to the top of the page
     window.scrollTo(0, 0);
@@ -32,28 +42,28 @@ const Home = () => {
     // Allow scrolling
     document.body.style.overflow = "auto";
   };
-    useEffect(() => {
-      // Add Google Tag Manager script dynamically
-      const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-136LZJM1YM";
-      script.async = true;
-      document.head.appendChild(script);
+  useEffect(() => {
+    // Add Google Tag Manager script dynamically
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-136LZJM1YM";
+    script.async = true;
+    document.head.appendChild(script);
 
-      // Initialize Google Tag Manager
-      const gtmScript = document.createElement("script");
-      gtmScript.innerHTML = `
+    // Initialize Google Tag Manager
+    const gtmScript = document.createElement("script");
+    gtmScript.innerHTML = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-136LZJM1YM');
     `;
-      document.head.appendChild(gtmScript);
-      // Clean up function
-      return () => {
-        document.head.removeChild(script);
-        document.head.removeChild(gtmScript);
-      };
-    }, []);
+    document.head.appendChild(gtmScript);
+    // Clean up function
+    return () => {
+      document.head.removeChild(script);
+      document.head.removeChild(gtmScript);
+    };
+  }, []);
 
   return (
     <main className="relative font-sans flex min-h-screen flex-col items-start">
@@ -86,6 +96,6 @@ const Home = () => {
       <Footer />
     </main>
   );
-}
+};
 
 export default Home;
