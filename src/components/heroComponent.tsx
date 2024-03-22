@@ -25,7 +25,7 @@ const heroComponent = ({
       <div className="relative z-1 flex flex-col gap-2 justify-center items-center h-full text-snow p-2 text-center lg:w-1/2 lg:m-auto">
         <h1 className="text-lg lg:text-4xl font-bold text-center mb-8">
           <span className="text-darkGreen">
-            Maximize Your Business's Impact:
+            Maximize Your Business Impact
           </span>
           <br></br>Achieve Sustainable Growth with Actionable Tools
         </h1>
@@ -35,7 +35,7 @@ const heroComponent = ({
         </p>
         <button
           onClick={openWaitlistForm}
-          className="text-snow text-sm lg:text-base  bg-navy py-2 w-4/5 lg:w-1/2 mt-4 drop-shadow-2xl rounded-sm text-center font-bold hover:bg-darkGreen"
+          className="text-snow text-sm lg:text-lg  bg-navy py-2 px-5 w-4/5 lg:w-1/2 mt-4 drop-shadow-2xl rounded-sm text-center font-bold hover:bg-darkGreen"
         >
           FREE IMPACT TOOLBOX ACCESS
         </button>

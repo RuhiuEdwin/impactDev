@@ -49,9 +49,9 @@ const featuresComponent = () => {
         {/* </div> */}
         {/* ))} */}
         {/* </div> */}
-        <div className="flex flex-col lg:flex-row gap-5 items-center justify-center lg:items-start">
-          <img className="w-11/12 lg:w-1/2 h-auto" src="/image.jpg" />
-          <p className="font-light text-sm lg:text-base mt-5 text-center lg:text-left">
+        <div className="flex lg:w-4/5 flex-col lg:flex-row gap-5 items-center justify-center mt-5 lg:items-start">
+          <img className="w-11/12 lg:w-2/5 h-auto" src="/image.jpg" />
+          <p className="font-light text-sm lg:text-base  text-center lg:text-left">
             ImpacTower serves as a one-stop resource hub for organizations
             committed to creating positive change in the world. Whether you're a{" "}
             <span className="font-bold">

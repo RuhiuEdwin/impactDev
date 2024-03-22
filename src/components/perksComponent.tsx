@@ -1,22 +1,24 @@
+import parse from "html-react-parser";
+
 const perksComponents = () => {
   // Define an array of objects representing perks
   const perksList = [
     {
-      title: "Increased Long-Term ROI",
+      title: "Return on Investment",
       details:
-        "Optimize long-term economic growth by seamlessly integrating sustainability into your business using our tools. Reduce operational risk and align with core values for a sustainable future.",
+        "Optimize long-term economic growth by seamlessly integrating sustainability into your business using our tools. <span className='font-bold'>Reduce operational risk</span> and align with core values for a sustainable future.",
       icon: "roi.png",
     },
     {
-      title: "Enhanced Sustainable Performance",
+      title: "Sustainability Performance",
       details:
-        "Boost sustainability performance with our expert guidance. Identify environmental and social impacts, obtain certifications, and maximize initiative impact with tailored support.",
+        "Enhanced Sustainable Performance Identify environmental and social impacts, obtain certifications, and <span className='font-bold'>maximize impact of your initiatives</span>, boosting sustainability performance with our expert guidance",
       icon: "coins.png",
     },
     {
-      title: "Emerging Market Growth",
+      title: "Market Access",
       details:
-        "Elevate your international competitiveness with renowned certifications. Benchmark against peers, drive growth confidently, and succeed as you expand globally.",
+        "Confidently <span className='font-bold'>access local and global markets</span>, seize opportunities while securing  compliance, social, or environmental certificates ,fostering growth and success in the international marketplace.",
       icon: "shop.png",
     },
   ];
@@ -46,7 +48,7 @@ const perksComponents = () => {
                 {/* Render title */}
                 <h4 className="font-bold lg:text-lg">{perk.title}</h4>
                 {/* Render details */}
-                <p className="font-light text-xs lg:text-sm">{perk.details}</p>
+                <p className="font-light text-xs lg:text-sm">{parse(perk.details)}</p>
               </div>
             </div>
           ))}
