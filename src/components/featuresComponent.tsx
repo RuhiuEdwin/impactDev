@@ -48,11 +48,11 @@ const featuresComponent = () => {
         <div className="flex lg:w-4/5 flex-col lg:flex-row gap-5 items-center justify-center mt-5 lg:items-start">
           <img className="w-11/12 lg:w-2/5 h-auto" src="/image.png" />
           <div className="flex flex-col gap-5 mt-5">
-            <p className="font-light lg:text-base  text-center lg:text-left">
+            <p className="font-light lg:font-normal lg:text-lg  text-center lg:text-left">
               In today's global marketplace, sustainability isn't just an option
-              — it's a necessity for long-term success.
+              <br></br>— it's a necessity for long-term success.
             </p>
-            <p className="font-light lg:text-base  text-center lg:text-left">
+            <p className="font-light lg:font-normal  lg:text-lg text-center lg:text-left">
               ImpacTower serves as a one-stop resource hub for organizations
               committed to creating positive change in the world. Whether you're
               a{" "}

@@ -19,7 +19,8 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
   updateFormData,
 }) => {
   const [isFormFilled, setIsFormFilled] = useState(false);
-
+  const [emailError, setEmailError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   const { name, value, type } = e.target;
   //   updateFormData({ [name]: value });
@@ -40,6 +41,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
     } else {
       updateFormData({ [name]: value });
     }
+    setEmailError("");
   };
 
   useEffect(() => {
@@ -57,10 +59,55 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
     setIsFormFilled(checkFormFilled());
   }, [formData]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const validateEmail = (email: string): boolean => {
+    console.log("validating email");
+    // Regular expression for validating email address format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
-    onNextStep();
+    setIsSubmitting(true);
+    if (!validateEmail(formData.emailAddress)) {
+      // Invalid email address
+      setIsSubmitting(false);
+      setEmailError("Please input a valid email address.");
+      return; // Prevent further execution
+    }
+
+    try {
+      const response = await fetch(
+        "https://phantom-abaft-slug.glitch.me/addToList",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email_address: formData.emailAddress,
+            status: "pending",
+            merge_fields: {
+              FNAME: formData.fullName,
+              COMPANY: formData.companyName,
+              EMAIL: formData.emailAddress,
+              // You can add other merge fields here as needed
+            },
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log(data);
+      setIsSubmitting(false);
+
+      // Perform any additional actions after successful submission
+      onNextStep();
+    } catch (error) {
+      console.error("Error:", error);
+      setIsSubmitting(false);
+      // Handle error appropriately, e.g., show error message to user
+    }
   };
 
   return (
@@ -96,8 +143,11 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
             value={formData.emailAddress}
             onChange={handleChange}
             placeholder="Email Address"
-            className="w-full bg-white rounded-sm lg:p-3 pl-2 p-1 text-navy"
+            className={`w-full bg-white rounded-sm lg:p-3 pl-2 p-1 text-navy ${
+              emailError ? "border-red-500" : ""
+            }`}
           />
+          {emailError && <p className="text-red-500 text-xs">{emailError}</p>}
         </div>
         <div className="flex flex-col gap-1 items-start w-full">
           <h4 className="font-bold text-sm">COMPANY NAME</h4>
@@ -139,9 +189,9 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
               ? "bg-navy text-snow hover:bg-darkGreen hover:border hover:border-darkGreen"
               : "bg-snow text-navy"
           }`}
-          disabled={!isFormFilled}
+          disabled={!isFormFilled || isSubmitting}
         >
-          FREE TOOLBOX ACCESS
+          {isSubmitting ? "SUBMITTING..." : "FREE TOOLBOX ACCESS"}
         </button>
       </form>
     </div>

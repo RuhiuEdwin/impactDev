@@ -6,12 +6,12 @@ const PartnersComponent = () => {
     "B-Lab.png",
     "EQULS-EU.png",
     "Futurize.png",
-    "GIvewatts.png",
     "kenyatta-university.png",
-    "Kiri-Logo.png",
     "merge.png",
-    "Metap.png",
     "ONE-TECH.png",
+    "GIvewatts.png",
+    "Kiri-Logo.png",
+    "Metap.png",
   ];
 
   const logosRef = useRef<HTMLDivElement>(null);
