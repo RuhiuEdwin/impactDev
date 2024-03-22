@@ -106,7 +106,7 @@ const Three: React.FC<ThreeProps> = ({
                 }
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Environmental conservation (e.g., reducing carbon footprint,
                 waste management)
               </label>
@@ -122,7 +122,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.socialResponsibility}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Social responsibility (e.g., fair labor practices, community
                 engagement)
               </label>
@@ -138,7 +138,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.fairTrade}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Fair trade (e.g., ethical sourcing, supply chain transparency)
               </label>
             </div>
@@ -153,7 +153,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.climateAction}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Climate action (e.g., mitigation strategies, adaptation
                 measures)
               </label>
@@ -169,7 +169,7 @@ const Three: React.FC<ThreeProps> = ({
                 value={formData.sustainabilityPriorities.genderEquality}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Gender equality ,diversity and inclusion
               </label>
             </div>
@@ -208,7 +208,7 @@ const Three: React.FC<ThreeProps> = ({
           onClick={onNextStep}
           className={`p-2 w-full rounded-sm text-center font-bold ${
             isFormFilled
-              ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
+              ? "bg-navy text-darkGreen hover:bg-darkGreen hover:border hover:border-darkGreen hover:text-snow"
               : "bg-snow text-navy"
           }`}
           disabled={!isFormFilled}

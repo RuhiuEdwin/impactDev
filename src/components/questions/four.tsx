@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 
 type FormData = {
   budget: string;
-  preferredFormat: string;
+  preferredFormat: string[];
   specificFeatures: string;
 };
 
@@ -27,7 +27,7 @@ const Four: React.FC<FourProps> = ({
     // Check if all form fields are filled
     const checkFormFilled = () => {
       const { budget, preferredFormat } = formData;
-      return budget !== "" && preferredFormat !== "";
+      return budget !== "" && preferredFormat.length > 0;
     };
 
     setIsFormFilled(checkFormFilled());
@@ -36,8 +36,21 @@ const Four: React.FC<FourProps> = ({
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    updateFormData({ [name]: value });
+    const { name, value, type } = e.target;
+    if (type === "checkbox" && name === "preferredFormat") {
+      const checkbox = e.target as HTMLInputElement;
+      let updatedArray = [...formData.preferredFormat];
+
+      if (checkbox.checked) {
+        updatedArray.push(value);
+      } else {
+        updatedArray = updatedArray.filter((item) => item !== value);
+      }
+
+      updateFormData({ [name]: updatedArray });
+    } else {
+      updateFormData({ [name]: value });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -74,50 +87,79 @@ const Four: React.FC<FourProps> = ({
             <div className="flex gap-1 items-start">
               <input
                 type="radio"
-                id="basic"
+                id="2500-"
                 name="budget"
-                value="Basic/Minimal Investment Bracket (0.5% - 1% of annual revenue)"
-                checked={
-                  formData.budget ===
-                  "Basic/Minimal Investment Bracket (0.5% - 1% of annual revenue)"
-                }
+                value="BELOW $2500"
+                checked={formData.budget === "BELOW $2500"}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
-                Basic/Minimal Investment Bracket (0.5% - 1% of annual revenue)
+              <label className="text-xs lg:text-sm font-light">
+                BELOW $2500
               </label>
             </div>
             <div className="flex gap-1 items-start">
               <input
                 type="radio"
-                id="moderate"
+                id="2500+"
                 name="budget"
-                value="Moderate Investment Bracket (1% - 2% of annual revenue)"
-                checked={
-                  formData.budget ===
-                  "Moderate Investment Bracket (1% - 2% of annual revenue)"
-                }
+                value="$2500 - $5000"
+                checked={formData.budget === "$2500 - $5000"}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
-                Moderate Investment Bracket (1% - 2% of annual revenue)
+              <label className="text-xs lg:text-sm font-light">
+                $2500 - $5000
               </label>
             </div>
             <div className="flex gap-1 items-start">
               <input
                 type="radio"
-                id="substantial"
+                id="10000+"
                 name="budget"
-                value="Substantial Investment Bracket (2% - 4% of annual revenue) OR Usd 5000 - 10,000, Usd 11000 - 20,000, Above 25,000"
-                checked={
-                  formData.budget ===
-                  "Substantial Investment Bracket (2% - 4% of annual revenue) OR Usd 5000 - 10,000, Usd 11000 - 20,000, Above 25,000"
-                }
+                value="$10,000 - $15,000"
+                checked={formData.budget === "$10,000 - $15,000"}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
-                Substantial Investment Bracket (2% - 4% of annual revenue) OR
-                Usd 5000 - 10,000, Usd 11000 - 20,000, Above 25,000
+              <label className="text-xs lg:text-sm font-light">
+                $10,000 - $15,000
+              </label>
+            </div>
+            <div className="flex gap-1 items-start">
+              <input
+                type="radio"
+                id="15000+"
+                name="budget"
+                value="$15,000 - $25,000"
+                checked={formData.budget === "$15,000 - $25,000"}
+                onChange={handleChange}
+              />
+              <label className="text-xs lg:text-sm font-light">
+                $15,000 - $25,000
+              </label>
+            </div>
+            <div className="flex gap-1 items-start">
+              <input
+                type="radio"
+                id="25000+"
+                name="budget"
+                value="ABOVE $25,000"
+                checked={formData.budget === "ABOVE $25,000"}
+                onChange={handleChange}
+              />
+              <label className="text-xs lg:text-sm font-light">
+                ABOVE $25,000
+              </label>
+            </div>
+            <div className="flex gap-1 items-start">
+              <input
+                type="radio"
+                id="noBudget"
+                name="budget"
+                value="No Budget Allocation"
+                checked={formData.budget === "No Budget Allocation"}
+                onChange={handleChange}
+              />
+              <label className="text-xs lg:text-sm font-light">
+                No Budget Allocation
               </label>
             </div>
           </div>
@@ -132,73 +174,110 @@ const Four: React.FC<FourProps> = ({
             {/* Use handleChange to update formData */}
             <div className="flex gap-1 items-start">
               <input
-                type="radio"
+                type="checkbox"
                 id="webinars"
                 name="preferredFormat"
                 value="Webinars"
-                checked={formData.preferredFormat === "Webinars"}
+                checked={formData.preferredFormat.includes("Webinars")}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">Webinars</label>
+              <label className="text-xs lg:text-sm font-light">Webinars</label>
             </div>
             <div className="flex gap-1 items-start">
               <input
-                type="radio"
+                type="checkbox"
                 id="guides"
                 name="preferredFormat"
                 value="Guides"
-                checked={formData.preferredFormat === "Guides"}
+                checked={formData.preferredFormat.includes("Guides")}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">Guides</label>
+              <label className="text-xs lg:text-sm font-light">Guides</label>
             </div>
             <div className="flex gap-1 items-start">
               <input
-                type="radio"
+                type="checkbox"
                 id="caseStudies"
                 name="preferredFormat"
                 value="Case Studies"
-                checked={formData.preferredFormat === "Case Studies"}
+                checked={formData.preferredFormat.includes("Case Studies")}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Case Studies
               </label>
             </div>
             <div className="flex gap-1 items-start">
               <input
-                type="radio"
+                type="checkbox"
                 id="interactiveTools"
                 name="preferredFormat"
                 value="Interactive Tools"
-                checked={formData.preferredFormat === "Interactive Tools"}
+                checked={formData.preferredFormat.includes("Interactive Tools")}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Interactive Tools
               </label>
             </div>
             <div className="flex gap-1 items-start">
               <input
-                type="radio"
+                type="checkbox"
                 id="One-On-One"
                 name="preferredFormat"
                 value="One-On-One"
-                checked={formData.preferredFormat === "One-On-One"}
+                checked={formData.preferredFormat.includes("One-On-One")}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">One-On-One</label>
+              <label className="text-xs lg:text-sm font-light">
+                One-On-One
+              </label>
             </div>
             <div className="flex gap-1 items-start">
               <input
-                type="radio"
+                type="checkbox"
                 id="group"
                 name="preferredFormat"
                 value="Group"
-                checked={formData.preferredFormat === "Group"}
+                checked={formData.preferredFormat.includes("Group")}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">Group</label>
+              <label className="text-xs lg:text-sm font-light">Group</label>
+            </div>
+            <div className="flex gap-1 items-start">
+              <input
+                type="checkbox"
+                id="template"
+                name="preferredFormat"
+                value="Template"
+                checked={formData.preferredFormat.includes("Template")}
+                onChange={handleChange}
+              />
+              <label className="text-xs lg:text-sm font-light">Template</label>
+            </div>
+            <div className="flex gap-1 items-start">
+              <input
+                type="checkbox"
+                id="checklist"
+                name="preferredFormat"
+                value="Checklist"
+                checked={formData.preferredFormat.includes("Checklist")}
+                onChange={handleChange}
+              />
+              <label className="text-xs lg:text-sm font-light">Checklist</label>
+            </div>
+            <div className="flex gap-1 items-start">
+              <input
+                type="checkbox"
+                id="policyMaps"
+                name="preferredFormat"
+                value="Policy Maps"
+                checked={formData.preferredFormat.includes("Policy Maps")}
+                onChange={handleChange}
+              />
+              <label className="text-xs lg:text-sm font-light">
+                Policy Maps
+              </label>
             </div>
           </div>
         </div>
@@ -227,7 +306,7 @@ const Four: React.FC<FourProps> = ({
             type="submit"
             className={`p-2 w-full rounded-sm text-center font-bold ${
               isFormFilled
-                ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
+                ? "bg-navy text-darkGreen hover:bg-darkGreen hover:border hover:border-darkGreen hover:text-snow"
                 : "bg-snow text-navy"
             }`}
             disabled={!isFormFilled || isSubmitting}

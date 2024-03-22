@@ -17,6 +17,9 @@ type FormData = {
   helpType: string[];
   companySize: string;
   countryOfOperations: string;
+  sector:string;
+  operations: string;
+  countries: string;
   sustainabilityInitiatives: string;
   sustainabilityInitiativesEngaged: string;
   sustainabilityPriorities: {
@@ -31,7 +34,7 @@ type FormData = {
   otherGoal: string;
   sustainabilityTeam: string[];
   budget: string;
-  preferredFormat: string;
+  preferredFormat: string[];
   specificFeatures: string;
 };
 
@@ -48,6 +51,9 @@ const questionsComponent = ({
     helpType: [],
     companySize: "",
     countryOfOperations: "",
+    countries: "",
+    sector:"",
+    operations: "",
     sustainabilityInitiatives: "",
     sustainabilityInitiativesEngaged: "",
     sustainabilityPriorities: {
@@ -62,7 +68,7 @@ const questionsComponent = ({
     otherGoal: "",
     sustainabilityTeam: [],
     budget: "",
-    preferredFormat: "",
+    preferredFormat: [],
     specificFeatures: "",
   });
 
@@ -98,64 +104,66 @@ const questionsComponent = ({
   return (
     <div
       // onClick={closeWaitlistForm}
-      className="bg-navy bg-opacity-40 flex items-center justify-center w-screen h-screen absolute top-0 left-0 z-20"
+      className="bg-navy bg-opacity-40 flex items-center justify-center w-full h-full fixed top-0 left-0 z-20  overflow-auto mx-auto"
     >
-      <div
-        ref={modalRef}
-        className="bg-olive rounded-sm lg:rounded-lg drop-shadow-xl flex flex-col items-center justify-center text-white lg:w-1/3 md:w-2/3 w-11/12 p-5 py-10 pb-10"
-      >
-        {currentStep !== 6 ? (
-          <h1 className="text-xl lg:text-3xl font-bold text-center pb-2 border-b border-b-darkGreen mb-5">
-            Access Impact Tool-Box
-          </h1>
-        ) : (
-          <h1 className="text-xl lg:text-3xl font-bold text-center pb-2 border-b border-b-darkGreen mb-5">
-            Thank you for your responses
-          </h1>
-        )}
-        {currentStep === 1 && (
-          <Main
-            onNextStep={handleNextStep}
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        )}
-        {currentStep === 2 && (
-          <One
-            onNextStep={handleNextStep}
-            formData={formData}
-            updateFormData={updateFormData}
-            onPreviousStep={handlePreviousStep}
-            closeWaitlistForm={closeWaitlistForm}
-          />
-        )}
-        {currentStep === 3 && (
-          <Two
-            onNextStep={handleNextStep}
-            formData={formData}
-            updateFormData={updateFormData}
-            onPreviousStep={handlePreviousStep}
-            closeWaitlistForm={closeWaitlistForm}
-          />
-        )}
-        {currentStep === 4 && (
-          <Three
-            onNextStep={handleNextStep}
-            formData={formData}
-            updateFormData={updateFormData}
-            onPreviousStep={handlePreviousStep}
-            closeWaitlistForm={closeWaitlistForm}
-          />
-        )}
-        {currentStep === 5 && (
-          <Four
-            onNextStep={handleNextStep}
-            formData={formData}
-            updateFormData={updateFormData}
-            onPreviousStep={handlePreviousStep}
-          />
-        )}
-        {currentStep === 6 && <Five closeWaitlistForm={closeWaitlistForm} />}
+      <div className="bg-none relative h-full w-full flex items-center justify-center pb-10">
+        <div
+          ref={modalRef}
+          className="absolute top-20 m-auto bg-opGreen rounded-sm lg:rounded-lg drop-shadow-xl flex flex-col items-center justify-center text-navy lg:w-1/3 md:w-2/3 w-10/12 p-5 py-10 mt-10 mb-10  overflow-auto"
+        >
+          {currentStep !== 6 ? (
+            <h1 className="text-xl lg:text-3xl font-bold text-center pb-2 border-b border-b-darkGreen mb-5">
+              Access Impact Tool-Box
+            </h1>
+          ) : (
+            <h1 className="text-xl lg:text-3xl font-bold text-center pb-2 border-b border-b-darkGreen mb-5">
+              Thank you for your responses
+            </h1>
+          )}
+          {currentStep === 1 && (
+            <Main
+              onNextStep={handleNextStep}
+              formData={formData}
+              updateFormData={updateFormData}
+            />
+          )}
+          {currentStep === 2 && (
+            <One
+              onNextStep={handleNextStep}
+              formData={formData}
+              updateFormData={updateFormData}
+              onPreviousStep={handlePreviousStep}
+              closeWaitlistForm={closeWaitlistForm}
+            />
+          )}
+          {currentStep === 3 && (
+            <Two
+              onNextStep={handleNextStep}
+              formData={formData}
+              updateFormData={updateFormData}
+              onPreviousStep={handlePreviousStep}
+              closeWaitlistForm={closeWaitlistForm}
+            />
+          )}
+          {currentStep === 4 && (
+            <Three
+              onNextStep={handleNextStep}
+              formData={formData}
+              updateFormData={updateFormData}
+              onPreviousStep={handlePreviousStep}
+              closeWaitlistForm={closeWaitlistForm}
+            />
+          )}
+          {currentStep === 5 && (
+            <Four
+              onNextStep={handleNextStep}
+              formData={formData}
+              updateFormData={updateFormData}
+              onPreviousStep={handlePreviousStep}
+            />
+          )}
+          {currentStep === 6 && <Five closeWaitlistForm={closeWaitlistForm} />}
+        </div>
       </div>
     </div>
   );

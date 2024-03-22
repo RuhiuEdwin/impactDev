@@ -109,7 +109,7 @@ const Three: React.FC<ThreeProps> = ({
                 )}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Enhancing sustainability performance
               </label>
             </div>
@@ -124,7 +124,7 @@ const Three: React.FC<ThreeProps> = ({
                 )}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Accessing new markets/opportunities
               </label>
             </div>
@@ -139,7 +139,7 @@ const Three: React.FC<ThreeProps> = ({
                 )}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Meeting stakeholder expectations
               </label>
             </div>
@@ -154,7 +154,7 @@ const Three: React.FC<ThreeProps> = ({
                 )}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Cost reduction/savings through efficiency improvements
               </label>
             </div>
@@ -189,7 +189,7 @@ const Three: React.FC<ThreeProps> = ({
                 )}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Have internal team / person
               </label>
             </div>
@@ -204,7 +204,7 @@ const Three: React.FC<ThreeProps> = ({
                 )}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 Work with external consultant(s)
               </label>
             </div>
@@ -219,7 +219,7 @@ const Three: React.FC<ThreeProps> = ({
                 )}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 In search for a partner / team
               </label>
             </div>
@@ -244,7 +244,7 @@ const Three: React.FC<ThreeProps> = ({
           onClick={onNextStep}
           className={`p-2 w-full rounded-sm text-center font-bold ${
             isFormFilled
-              ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
+              ? "bg-navy text-darkGreen hover:bg-darkGreen hover:border hover:border-darkGreen hover:text-snow"
               : "bg-snow text-navy"
           }`}
           disabled={!isFormFilled}

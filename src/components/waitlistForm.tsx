@@ -120,7 +120,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
                 checked={formData.helpType.includes("guides")}
                 onChange={handleChange}
               />
-              <label className="text-xs lg:text-sm font-thin">GUIDES</label>
+              <label className="text-xs lg:text-sm font-light">GUIDES</label>
             </div>
             <div className="flex gap-1 items-center">
               <input
@@ -131,7 +131,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
                 onChange={handleChange}
                 checked={formData.helpType.includes("toolkits")}
               />
-              <label className="text-xs lg:text-sm font-thin">TOOLKITS</label>
+              <label className="text-xs lg:text-sm font-light">TOOLKITS</label>
             </div>
             <div className="flex gap-1 items-center">
               <input
@@ -142,7 +142,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
                 onChange={handleChange}
                 checked={formData.helpType.includes("certifications")}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 CERTIFICATIONS
               </label>
             </div>
@@ -155,7 +155,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
                 onChange={handleChange}
                 checked={formData.helpType.includes("all")}
               />
-              <label className="text-xs lg:text-sm font-thin">
+              <label className="text-xs lg:text-sm font-light">
                 ALL THE ABOVE
               </label>
             </div>
@@ -165,7 +165,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
           type="submit"
           className={`p-2 w-full rounded-sm text-center font-bold mt-10 ${
             isFormFilled
-              ? "bg-navy text-darkGreeen hover:bg-darkGreen hover:border hover:border-darkGreen"
+              ? "bg-navy text-darkGreen hover:bg-darkGreen hover:border hover:border-darkGreen hover:text-snow"
               : "bg-snow text-navy"
           }`}
           disabled={!isFormFilled}
