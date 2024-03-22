@@ -20,7 +20,7 @@ const callToAction3Component = ({ openWaitlistForm }: { openWaitlistForm: OpenWa
 
       {/* Content */}
       <div className="relative w-10/12 m-auto lg:max-w-screen-md  z-1 flex flex-col gap-2 justify-center items-center h-full text-snow p-5 text-center">
-        <h1 className="text-xl lg:text-3xl font-bold text-center lg:mb-3 mb-8">
+        <h1 className="text-xl capitalize lg:text-3xl font-bold text-center lg:mb-3 mb-8">
           Let us help you achieve your Sustainability Goals with Confidence and
           Impact.
         </h1>

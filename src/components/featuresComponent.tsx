@@ -19,14 +19,10 @@ const featuresComponent = () => {
   return (
     <div className=" text-navy px-5 py-5 lg:py-10 bg-opGreen w-screen">
       <div className="m-auto max-w-screen-xl flex flex-col gap-5 items-center justify-center">
-        <h1 className="text-lg lg:w-1/2 lg:text-2xl font-bold text-center">
+        <h1 className="text-lg capitalize lg:w-1/2 lg:text-2xl font-bold text-center">
           Discover curated emerging Tools & Resources for Impact & Sustainable
           Growth !
         </h1>
-        <p className="font-light lg:w-1/2 text-sm lg:text-base text-center">
-          In today's global marketplace, sustainability isn't just an option —
-          it's a necessity for long-term success.
-        </p>
         {/* <div className="flex flex-col gap-3 lg:gap-0 items-start"> */}
         {/* Map over the array to render each icon-perk pair */}
         {/* {featuresList.map((feature, index) => (
@@ -50,19 +46,26 @@ const featuresComponent = () => {
         {/* ))} */}
         {/* </div> */}
         <div className="flex lg:w-4/5 flex-col lg:flex-row gap-5 items-center justify-center mt-5 lg:items-start">
-          <img className="w-11/12 lg:w-2/5 h-auto" src="/image.jpg" />
-          <p className="font-light text-sm lg:text-base  text-center lg:text-left">
-            ImpacTower serves as a one-stop resource hub for organizations
-            committed to creating positive change in the world. Whether you're a{" "}
-            <span className="font-bold">
-              social entrepreneur, corporate sustainability professional
-            </span>
-            , or passionate mission-driven individual, the{" "}
-            <span className="font-bold">
-              Toolbox of Impact resources and tools
-            </span>{" "}
-            support your sustainability journey no matter your size or stage
-          </p>
+          <img className="w-11/12 lg:w-2/5 h-auto" src="/image.png" />
+          <div className="flex flex-col gap-5 mt-5">
+            <p className="font-light lg:text-base  text-center lg:text-left">
+              In today's global marketplace, sustainability isn't just an option
+              — it's a necessity for long-term success.
+            </p>
+            <p className="font-light lg:text-base  text-center lg:text-left">
+              ImpacTower serves as a one-stop resource hub for organizations
+              committed to creating positive change in the world. Whether you're
+              a{" "}
+              <span className="font-bold">
+                social entrepreneur, corporate sustainability professional
+              </span>
+              , or passionate mission-driven individual, the{" "}
+              <span className="font-bold">
+                Toolbox of Impact resources and tools
+              </span>{" "}
+              support your sustainability journey no matter your size or stage
+            </p>
+          </div>
         </div>
       </div>
     </div>

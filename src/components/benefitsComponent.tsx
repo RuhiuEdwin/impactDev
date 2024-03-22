@@ -24,7 +24,7 @@ const benefitsComponents = () => {
   return (
     <div className="flex justify-center items-center gap-5 text-navy px-5 py-10 lg:py-20 bg-opGreen w-screen">
       <div className=" max-w-screen-xl m-auto flex flex-col">
-        <h1 className="text-xl uppercase lg:text-3xl text-navy font-light text-center mb-10">
+        <h1 className="text-xl capitalize lg:text-3xl text-navy font-light text-center mb-10">
           What Makes Impact ToolBox So Powerful!
         </h1>
         <div className="flex flex-col lg:flex-row lg:items-center justify-center items-center gap-5">

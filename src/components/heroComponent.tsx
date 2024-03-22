@@ -23,13 +23,11 @@ const heroComponent = ({
 
       {/* Content */}
       <div className="relative z-1 flex flex-col gap-2 justify-center items-center h-full text-snow p-2 text-center lg:w-1/2 lg:m-auto">
-        <h1 className="text-lg lg:text-4xl font-bold text-center mb-8">
-          <span className="text-darkGreen">
-            Maximize Your Business Impact
-          </span>
+        <h1 className="capitalize text-lg lg:text-4xl font-bold text-center mb-8">
+          <span className="text-darkGreen">Maximize Your Business Impact</span>
           <br></br>Achieve Sustainable Growth with Actionable Tools
         </h1>
-        <p className="text-sm lg:text-base">
+        <p className="text-sm capitalize lg:text-base">
           Find Simple, Actionable Tools & Resources for Embedding Sustainability
           & Impact to your business
         </p>
