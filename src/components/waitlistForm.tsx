@@ -76,47 +76,48 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
       return; // Prevent further execution
     }
 
-    // try {
-    //   const response = await fetch(
-    //     "https://phantom-abaft-slug.glitch.me/addToList",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         email_address: formData.emailAddress,
-    //         status: "pending",
-    //         merge_fields: {
-    //           FNAME: formData.fullName,
-    //           COMPANY: formData.companyName,
-    //           EMAIL: formData.emailAddress,
-    //           // You can add other merge fields here as needed
-    //         },
-    //       }),
-    //     }
-    //   );
+    try {
+      const response = await fetch(
+        "https://impactower.com/mailchimp/addToList",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email_address: formData.emailAddress,
+            status: "pending",
+            merge_fields: {
+              FNAME: formData.fullName,
+              COMPANY: formData.companyName,
+              EMAIL: formData.emailAddress,
+              // You can add other merge fields here as needed
+            },
+          }),
+        }
+      );
 
-    //   const data = await response.json();
-    //   console.log(data);
+      const data = await response.json();
+      console.log(data);
       setIsSubmitting(false);
 
       // Perform any additional actions after successful submission
       onNextStep();
-    // } catch (error) {
-    //   console.error("Error:", error);
-    //   setIsSubmitting(false);
-    //   // Handle error appropriately, e.g., show error message to user
-    // }
+    } catch (error) {
+      console.error("Error:", error);
+      setIsSubmitting(false);
+      // Handle error appropriately, e.g., show error message to user
+    }
   };
 
   return (
     <div>
-      <p className="text-sm lg:text-base text-center mt-2">
-        ImpacTower provides a Toolbox of Impact resources & Toolkits <br></br>
-        <span className="text-navy font-bold uppercase">
+      <p className="text-sm lg:text-base text-center mt-2 capitalize">
+        Access Essential Toolkits and Resources to meet your sustainability
+        Goals & ESG compliance needs <br></br>
+        {/* <span className="text-navy font-bold uppercase">
           Sign up to receive free access
-        </span>
+        </span> */}
       </p>
       <form
         onSubmit={handleSubmit}

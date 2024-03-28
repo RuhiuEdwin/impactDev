@@ -6,6 +6,7 @@ const PartnersComponent = () => {
     "B-Lab.png",
     "EQULS-EU.png",
     "Futurize.png",
+    "sdg.png",
     "kenyatta-university.png",
     "merge.png",
     "ONE-TECH.png",
@@ -41,9 +42,9 @@ const PartnersComponent = () => {
   }, []);
 
   return (
-    <div className="bg-snow px-5 py-10 border-olive border border-opacity-70 w-screen">
+    <div className="bg-white p-5 w-screen">
       <div className="max-w-screen-xl m-auto">
-        <h1 className="text-lg capitalize lg:text-2xl text-navy font-light text-center mb-5">
+        <h1 className="text-lg capitalize lg:text-2xl text-navy font-light text-center ">
           Some of The Companies that Trust Us
         </h1>
         <div
@@ -60,7 +61,7 @@ const PartnersComponent = () => {
               key={index}
               src={`/partners/${logo}`}
               alt={`Logo ${index + 1}`}
-              className="inline-block mx-4 w-28 h-auto"
+              className="inline-block mx-4 w-32 h-auto"
             />
           ))}
         </div>

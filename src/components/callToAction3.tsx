@@ -26,7 +26,7 @@ const callToAction3Component = ({ openWaitlistForm }: { openWaitlistForm: OpenWa
         </h1>
         <button
           onClick={openWaitlistForm}
-          className="text-snow text-sm lg:text-lg  bg-navy py-2 px-5 w-4/5 lg:w-1/2 mt-4 drop-shadow-2xl rounded-sm text-center font-bold hover:bg-darkGreen"
+          className="text-snow text-sm lg:text-lg  bg-darkGreen py-2 px-5 w-4/5 lg:w-1/2 mt-4 drop-shadow-2xl rounded-sm text-center font-bold hover:bg-darkGreen"
         >
           FREE IMPACT TOOLBOX ACCESS
         </button>

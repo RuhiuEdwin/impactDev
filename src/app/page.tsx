@@ -76,10 +76,10 @@ const Home = () => {
       {/* <Questions /> */}
       {/* Hero  */}
       <HeroPage openWaitlistForm={openWaitlistForm} />
-      {/* Features  */}
-      <Features />
       {/* Partners Slider */}
       <PartnersSlider />
+      {/* Features  */}
+      <Features />
       {/* Product Perks  */}
       <ProductsPerks />
       {/* First CTA  */}

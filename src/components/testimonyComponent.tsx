@@ -20,7 +20,7 @@ const testimonyComponent = () => {
   ];
 
   return (
-    <div className="w-full px-5 py-10 lg:py-20 flex flex-col items-start gap-5">
+    <div className="bg-white w-full px-5 py-10 lg:py-20 flex flex-col items-start gap-5">
       <div className=" max-w-screen-xl m-auto flex flex-col ga-5 items-start">
         <h1 className="text-xl capitalize lg:text-3xl text-navy font-light text-center mb-10">
           Dont Just Take Our Word For It!

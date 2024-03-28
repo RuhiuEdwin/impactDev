@@ -17,11 +17,11 @@ const featuresList = [
 
 const featuresComponent = () => {
   return (
-    <div className=" text-navy px-5 py-5 lg:py-10 bg-opGreen w-screen">
+    <div className="  px-5 py-5 lg:py-10 bg-white w-screen">
       <div className="m-auto max-w-screen-xl flex flex-col gap-5 items-center justify-center">
-        <h1 className="text-lg capitalize lg:w-1/2 lg:text-2xl font-bold text-center">
-          Discover curated emerging Tools & Resources for Impact & Sustainable
-          Growth !
+        <h1 className="text-lg text-navy capitalize lg:w-1/2 lg:text-2xl font-bold text-center">
+          Discover curated toolkits for your sustainable growth aligned with
+          environmental & social goals!
         </h1>
         {/* <div className="flex flex-col gap-3 lg:gap-0 items-start"> */}
         {/* Map over the array to render each icon-perk pair */}
@@ -45,25 +45,30 @@ const featuresComponent = () => {
         {/* </div> */}
         {/* ))} */}
         {/* </div> */}
-        <div className="flex lg:w-4/5 flex-col lg:flex-row gap-5 items-center justify-center mt-5 lg:items-start">
-          <img className="w-11/12 lg:w-2/5 h-auto" src="/image.png" />
-          <div className="flex flex-col gap-5 mt-5">
-            <p className="font-light lg:font-normal lg:text-lg  text-center lg:text-left">
+        <div className="flex lg:relative lg:w-4/5 flex-col lg:flex-row gap-5 items-center justify-center lg:items-end bg-darkGreen rounded-lg p-2 pb-5 pt-5 lg:p-5 lg:pl-84 mt-20">
+          <div className="bg-white lg:absolute lg:bottom-5 lg:left-5 rounded-lg p-5 w-11/12 lg:w-2/5 drop-shadow-xl">
+            <img className="w-full h-auto" src="/image.png" />
+          </div>
+          <div className="hidden lg:flex bg-darkGreen w-11/12 lg:w-2/5 "></div>
+          <div className="flex text-sm lg:text-base flex-col gap-5 text-snow mt-5  w-11/12 lg:w-1/2">
+            <p className="font-light lg:font-normal  text-center lg:text-left">
               In today's global marketplace, sustainability isn't just an option
               <br></br>— it's a necessity for long-term success.
             </p>
-            <p className="font-light lg:font-normal  lg:text-lg text-center lg:text-left">
-              ImpacTower serves as a one-stop resource hub for organizations
-              committed to creating positive change in the world. Whether you're
-              a{" "}
+            <p className="font-light lg:font-normal lg:float-right  text-center lg:text-left">
+              <span className="font-bold">ImpacTower</span> offer a
+              comprehensive suite of resources to help you adopt, align and
+              accelerate your impact, whether you're a{" "}
               <span className="font-bold">
                 social entrepreneur, corporate sustainability professional
-              </span>
-              , or passionate mission-driven individual, the{" "}
-              <span className="font-bold">
-                Toolbox of Impact resources and tools
               </span>{" "}
-              support your sustainability journey no matter your size or stage
+              or <span className="font-bold">impact enthusiast</span>. Our{" "}
+              <span className="font-bold">Toolbox of Impact</span> provides the{" "}
+              <span className="font-bold">
+                essential and actionable toolkits
+              </span>{" "}
+              you need on your journey towards sustainability, tailored to fit
+              businesses of any size or stage
             </p>
           </div>
         </div>
