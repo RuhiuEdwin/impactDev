@@ -78,7 +78,7 @@ const waitlistForm: React.FC<WaitlistFormProps> = ({
 
     try {
       const response = await fetch(
-        "https://impactower.com/mailchimp/addToList",
+        "https://impactower.com/ping/addToList",
         {
           method: "POST",
           headers: {

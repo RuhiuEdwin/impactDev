@@ -10,7 +10,7 @@ const PartnersComponent = () => {
     "kenyatta-university.png",
     "merge.png",
     "ONE-TECH.png",
-    "GIvewatts.png",
+    "Givewatts.png",
     "Kiri-Logo.png",
     "Metap.png",
   ];
