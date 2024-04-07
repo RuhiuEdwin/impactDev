@@ -64,7 +64,7 @@ export default function RootLayout({
           }`}
         </script>
       </Head>
-      <body className={inter.className}>{children}</body>
+      {children}
     </>
   );
 }
