@@ -17,7 +17,11 @@ type FourProps = {
 const Four: React.FC<FourProps> = ({
   onNextStep,
   onPreviousStep,
-  formData,
+  formData = {
+    budget: "",
+    preferredFormat: [],
+    specificFeatures: "",
+  },
   updateFormData,
 }) => {
   const [isFormFilled, setIsFormFilled] = useState(false);

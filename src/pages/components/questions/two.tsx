@@ -24,7 +24,16 @@ const Three: React.FC<ThreeProps> = ({
   onNextStep,
   onPreviousStep,
   closeWaitlistForm,
-  formData,
+  formData = {
+    sustainabilityPriorities: {
+      environmentalConservation: 1,
+      socialResponsibility: 1,
+      fairTrade: 1,
+      climateAction: 1,
+      genderEquality: 1,
+    },
+    sustainabilityStandards: "",
+  },
   updateFormData,
 }) => {
   const [isFormFilled, setIsFormFilled] = useState(false);

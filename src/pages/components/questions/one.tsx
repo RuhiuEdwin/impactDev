@@ -23,7 +23,15 @@ const Two: React.FC<TwoProps> = ({
   onNextStep,
   onPreviousStep,
   closeWaitlistForm,
-  formData,
+  formData = {
+    companySize: "",
+    countryOfOperations: "",
+    operations: "",
+    countries: "",
+    sector: "",
+    sustainabilityInitiatives: "",
+    sustainabilityInitiativesEngaged: "",
+  },
   updateFormData,
 }) => {
   const [isFormFilled, setIsFormFilled] = useState(false);

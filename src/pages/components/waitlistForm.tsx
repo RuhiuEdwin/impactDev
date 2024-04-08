@@ -15,7 +15,12 @@ type WaitlistFormProps = {
 
 const waitlistForm: React.FC<WaitlistFormProps> = ({
   onNextStep,
-  formData,
+  formData = {
+    fullName: "",
+    emailAddress: "",
+    companyName: "",
+    helpType: [],
+  },
   updateFormData,
 }) => {
   const [isFormFilled, setIsFormFilled] = useState(false);

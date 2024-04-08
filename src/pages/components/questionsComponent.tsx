@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useRef, useEffect } from "react";
 import Main from "./waitlistForm";
 import One from "./questions/one";
