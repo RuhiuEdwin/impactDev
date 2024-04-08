@@ -72,7 +72,7 @@ const Home = () => {
     <Layout
       title="Impact Tower | Sustainability As a Service for SMEs in International Trade"
       description="Explore best practices, tools, and resources for SMEs and traders to address environmental and social impacts, gain access to international markets, and navigate sustainable trade."
-      favicon="https://impactower.com/favicon.ico"
+      favicon="https://impactower.com/_next/image?url=%2Flogo.png&w=256&q=75"
     >
       <main className="relative font-sans flex min-h-screen flex-col items-start">
         {/* Waitlist Form modal */}
